@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Profile | TechNova 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@500;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#0b0a17;--panel:#15122b;--violet:#7c3aed;--cyan:#22d3ee;--pink:#ff5fa2;--text:#f4f1ff;--muted:#bdb6ee;--line:#393264}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 15% 15%,#26154b,transparent 40%),var(--bg);color:var(--text);font:16px/1.6 Poppins,sans-serif}.top{padding:18px 5%;display:flex;justify-content:space-between;align-items:center;background:#030307;border-bottom:1px solid var(--line)}.brand{font:1rem Audiowide,sans-serif;text-decoration:none}.top a:last-child,.button{color:#080710;background:#fff;border:0;border-radius:10px;padding:10px 16px;text-decoration:none;font-weight:600;cursor:pointer}.wrap{width:min(680px,92%);margin:60px auto}.card{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:clamp(22px,5vw,40px);box-shadow:0 20px 60px #0006}.eyebrow{color:var(--cyan);font-size:.75rem;letter-spacing:.1em}h1{font:700 clamp(1.8rem,5vw,2.5rem) Orbitron,sans-serif;margin:8px 0 4px}.muted{color:var(--muted)}.row{padding:14px 0;border-bottom:1px solid var(--line)}.row:last-of-type{border:0}.row strong{display:block;font-size:.78rem;color:var(--muted);font-weight:500}.row span{overflow-wrap:anywhere}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.button.secondary{background:transparent;color:var(--text);border:1px solid var(--line)}#message{margin-top:16px;color:var(--pink)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;padding:12px 0}
+.bar{background:#000;color:#fff;border-radius:999px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 10px 8px 22px;border:1px solid #2a2550;box-shadow:0 0 0 1px rgba(124,58,237,.35),0 10px 30px rgba(0,0,0,.25)}
+.logo{font:400 1.25rem 'Audiowide',sans-serif;text-decoration:none;letter-spacing:.06em;display:flex;align-items:center;gap:10px}
+.logo i{width:18px;height:18px;border:3px solid var(--violet);border-radius:4px;transform:rotate(45deg);box-shadow:0 0 10px var(--cyan) inset}
+nav ul{display:flex;gap:2px;list-style:none;margin:0;padding:0}
+nav a{display:block;padding:8px 11px;border-radius:999px;text-decoration:none;font:500 .82rem 'Poppins',sans-serif}
+nav a:hover,nav a[aria-current]{background:#221d4d}
+.reg{background:#fff;color:#000;font:600 .85rem 'Poppins';text-decoration:none;padding:9px 20px;border-radius:999px;border:1px solid #fff;white-space:nowrap}
+.reg:hover{background:var(--cyan);border-color:var(--cyan)}
+.user-avatar[hidden]{display:none!important}.user-avatar{width:44px;height:44px;flex:0 0 44px;display:inline-flex;align-items:center;justify-content:center;border:2px solid var(--cyan);border-radius:50%;background:linear-gradient(135deg,#7c3aed,#211747);color:#fff;font:700 1rem 'Orbitron',sans-serif;text-decoration:none;box-shadow:0 0 0 3px rgba(34,211,238,.12);letter-spacing:0}.account-menu{position:relative;flex:0 0 auto}.account-dropdown[hidden],.account-menu[hidden]{display:none!important}.account-dropdown{position:absolute;right:0;top:54px;width:230px;padding:10px;background:#080713;color:#f4f1ff;border:1px solid #393264;border-radius:16px;box-shadow:0 16px 44px rgba(0,0,0,.4);z-index:50}.account-summary{padding:10px 10px 12px;border-bottom:1px solid #393264;margin-bottom:6px;overflow-wrap:anywhere}.account-summary strong,.account-summary span{display:block}.account-summary strong{font:700 .82rem 'Orbitron',sans-serif}.account-summary span{font-size:.72rem;color:#bdb6ee;margin-top:4px}.account-dropdown a,.account-dropdown button{display:block;width:100%;text-align:left;padding:11px 10px;border:0;border-radius:9px;background:transparent;color:#f4f1ff;text-decoration:none;font:500 .86rem 'Poppins',sans-serif;cursor:pointer}.account-dropdown a:hover,.account-dropdown button:hover{background:#241d50}.account-dropdown button{color:#ffb5cd}
+.burger{display:none;background:none;border:1px solid #403a80;color:#fff;border-radius:999px;padding:8px 14px;font:600 .8rem 'Poppins';min-height:44px;cursor:pointer}
+@media (max-width:1040px){
+  .burger{display:block}
+  nav{position:absolute;left:20px;right:20px;top:72px;background:#000;border:1px solid #2a2550;border-radius:22px;padding:10px;display:none}
+  nav.open{display:block}
+  nav ul{flex-direction:column}
+  nav a{padding:13px 16px}
+  .bar .reg{margin-left:auto}
+}
+
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="bar">
+      <a class="logo" href="home.html" aria-label="TechNova 2026 home"><i aria-hidden="true"></i>TECHNOVA 2026</a>
+      <nav id="nav" aria-label="Main">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="domains.html">Domains</a></li>
+          <li><a href="rules.html">Rules</a></li>
+          <li><a href="prizes-sponsors.html">Prizes &amp; Sponsors</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="updates.html">Updates</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="reg" id="auth-cta" href="user_login.html">Login</a>
+      <div class="account-menu" id="account-menu" hidden>
+        <button class="user-avatar" id="user-avatar" type="button" aria-label="Open account menu" aria-expanded="false" aria-controls="account-dropdown" title="Account menu">?</button>
+        <div class="account-dropdown" id="account-dropdown" hidden>
+          <div class="account-summary"><strong id="account-name">Your account</strong><span id="account-email"></span></div>
+          <a href="account.html" role="menuitem">Profile</a>
+          <button type="button" id="logout-button" role="menuitem">Log out</button>
+        </div>
+      </div>
+      <button class="burger" aria-expanded="false" aria-controls="nav" id="burger">Menu</button>
+    </div>
+  </div>
+</header>
+<main class="wrap"><section class="card"><span class="eyebrow">PARTICIPANT PORTAL</span><h1>My Profile</h1><p class="muted">Your account information from TechNova.</p>
+<div class="row"><strong>Full name</strong><span id="name">Loading…</span></div>
+<div class="row"><strong>Email address</strong><span id="email">Loading…</span></div>
+<div class="row"><strong>College / University</strong><span id="college">—</span></div>
+<div id="message" role="status"></div>
+<div class="actions"><a class="button secondary" href="home.html">Back to home</a><button class="button" id="logout" type="button">Log out</button></div>
+</section></main>
+<script type="module">
+import { supabase } from "./js/auth.js";
+const message = document.getElementById("message");
+const { data: { session }, error: sessionError } = await supabase.auth.getSession();
+if (sessionError) { message.textContent = sessionError.message; }
+if (!session?.user) { location.replace("user_login.html"); }
+else {
+ const user = session.user;
+ document.getElementById("name").textContent = user.user_metadata?.full_name || user.user_metadata?.name || "Not provided";
+ document.getElementById("email").textContent = user.email || "Not provided";
+ const { data: profile, error } = await supabase.from("profiles").select("college, full_name").eq("id", user.id).maybeSingle();
+ if (error) message.textContent = "Profile details could not be loaded: " + error.message;
+ else if (profile?.college) document.getElementById("college").textContent = profile.college;
+ if (profile?.full_name) document.getElementById("name").textContent = profile.full_name;
+}
+document.getElementById("logout").addEventListener("click", async () => {
+ const button = document.getElementById("logout"); button.disabled = true; button.textContent = "Logging out…";
+ const { error } = await supabase.auth.signOut();
+ if (error) { message.textContent = error.message; button.disabled = false; button.textContent = "Log out"; return; }
+ location.replace("home.html");
+});
+</script>
+<script type="module">
+import { supabase } from "./js/auth.js";
+const cta=document.getElementById("auth-cta"),menu=document.getElementById("account-menu"),avatar=document.getElementById("user-avatar"),dropdown=document.getElementById("account-dropdown"),logout=document.getElementById("logout-button"),name=document.getElementById("account-name"),email=document.getElementById("account-email");
+function signedOut(){if(menu)menu.hidden=true;if(dropdown)dropdown.hidden=true;if(avatar)avatar.setAttribute("aria-expanded","false");if(cta)cta.hidden=false;}
+function signedIn(user){if(!user)return signedOut();const full=(user.user_metadata?.full_name||user.user_metadata?.name||"").trim();if(avatar){avatar.textContent=(full||user.email||"?").charAt(0).toUpperCase();avatar.setAttribute("aria-label","Open account menu");}if(name)name.textContent=full||"Your profile";if(email)email.textContent=user.email||"";if(menu)menu.hidden=false;if(cta)cta.hidden=true;}
+if(avatar)avatar.addEventListener("click",()=>{const open=dropdown.hidden;dropdown.hidden=!open;avatar.setAttribute("aria-expanded",String(open));});
+document.addEventListener("click",event=>{if(menu&&!menu.contains(event.target)){dropdown.hidden=true;avatar?.setAttribute("aria-expanded","false");}});
+document.addEventListener("keydown",event=>{if(event.key==="Escape"&&dropdown){dropdown.hidden=true;avatar?.setAttribute("aria-expanded","false");}});
+if(logout)logout.addEventListener("click",async()=>{logout.disabled=true;logout.textContent="Logging out…";const {error}=await supabase.auth.signOut();if(error){logout.disabled=false;logout.textContent="Log out";alert("Could not log out: "+error.message);return;}location.replace("home.html");});
+const {data:{session},error}=await supabase.auth.getSession();if(error)console.error("Could not read Supabase session:",error.message);signedIn(session?.user||null);supabase.auth.onAuthStateChange((_event,next)=>signedIn(next?.user||null));
+const burger=document.getElementById("burger"),nav=document.getElementById("nav");if(burger&&nav)burger.addEventListener("click",()=>{const open=nav.classList.toggle("open");burger.setAttribute("aria-expanded",String(open));});
+</script>
+</body>
+</html>

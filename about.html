@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TechNova 2026 | About the Student Innovation Event &amp; Organizers</title>
+<meta name="description" content="Discover why TechNova 2026 was conceived, the student innovation vision behind this fictional university hackathon prototype, and the responsibilities of its hypothetical organizers.">
+<link rel="canonical" href="/about">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@500;700;900&family=Poppins:wght@400;500;600&family=Rubik+Mono+One&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"/"},
+{"@type":"ListItem","position":2,"name":"About","item":"/about"}]}
+</script>
+<style>
+:root{
+  --paper:#f3f2f7; --line:#c9c6d6; --ink:#14101f; --muted:#4b4660;
+  --night:#0b0a17; --card:#15122b; --violet:#7c3aed; --pink:#ff5fa2; --cyan:#22d3ee; --blush:#f9c6dc;
+  --on-night:#ece9ff;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--paper:#0e0c1c;--line:#2b2750;--ink:#efecff;--muted:#b3adce;--night:#050410;--card:#18143a;}
+}
+:root[data-theme="dark"]{--paper:#0e0c1c;--line:#2b2750;--ink:#efecff;--muted:#b3adce;--night:#050410;--card:#18143a;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 84px)}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1rem/1.65 'Poppins',system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cyan);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.proto{background:var(--ink);color:var(--paper);font:700 .78rem/1.4 'Space Mono',monospace;text-align:center;padding:6px 12px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;padding:12px 0}
+.bar{background:#000;color:#fff;border-radius:999px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 10px 8px 22px;border:1px solid #2a2550;box-shadow:0 0 0 1px rgba(124,58,237,.35),0 10px 30px rgba(0,0,0,.25)}
+.logo{font:400 1.25rem 'Audiowide',sans-serif;text-decoration:none;letter-spacing:.06em;display:flex;align-items:center;gap:10px}
+.logo i{width:18px;height:18px;border:3px solid var(--violet);border-radius:4px;transform:rotate(45deg);box-shadow:0 0 10px var(--cyan) inset}
+nav ul{display:flex;gap:2px;list-style:none;margin:0;padding:0}
+nav a{display:block;padding:8px 11px;border-radius:999px;text-decoration:none;font:500 .82rem 'Poppins',sans-serif}
+nav a:hover,nav a[aria-current]{background:#221d4d}
+.reg{background:#fff;color:#000;font:600 .85rem 'Poppins';text-decoration:none;padding:9px 20px;border-radius:999px;border:1px solid #fff;white-space:nowrap}
+.reg:hover{background:var(--cyan);border-color:var(--cyan)}
+.burger{display:none;background:none;border:1px solid #403a80;color:#fff;border-radius:999px;padding:8px 14px;font:600 .8rem 'Poppins';min-height:44px;cursor:pointer}
+@media (max-width:1040px){
+  .burger{display:block}
+  nav{position:absolute;left:20px;right:20px;top:72px;background:#000;border:1px solid #2a2550;border-radius:22px;padding:10px;display:none}
+  nav.open{display:block}
+  nav ul{flex-direction:column}
+  nav a{padding:13px 16px}
+  .bar .reg{margin-left:auto}
+}
+.hero{position:relative;overflow:hidden;padding:56px 0 72px;isolation:isolate}
+.topo{position:absolute;inset:0;width:100%;height:100%;z-index:-1;opacity:.9}
+.topo ellipse{fill:none;stroke:var(--line);stroke-width:1.3}
+.grid{display:grid;grid-template-columns:1.35fr 1fr;gap:36px;align-items:start}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+.sealrow{display:inline-flex;align-items:center;gap:10px;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:5px 16px 5px 6px;font:700 .75rem 'Space Mono',monospace}
+.sealrow b{background:var(--violet);color:#fff;border-radius:50%;width:26px;height:26px;display:grid;place-items:center}
+h1{margin:22px 0 0;font:400 clamp(2.5rem,7.4vw,5.6rem)/.98 'Rubik Mono One',sans-serif;letter-spacing:-.01em;color:var(--ink);text-transform:uppercase}
+h1 .sub{display:inline-block;margin-top:18px;font:700 clamp(1rem,2.4vw,1.5rem)/1.3 'Orbitron',sans-serif;text-transform:none;letter-spacing:.02em;background:linear-gradient(#7637c2, #392077) no-repeat 0 90% / 100% 45%;color:var(--ink)}
+.tag{font:600 1.15rem 'Poppins';margin:26px 0 6px;max-width:34em}
+.lead{color:var(--muted);max-width:36em;margin:0}
+.ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:12px 28px;border-radius:14px;font:700 .9rem 'Orbitron',sans-serif;letter-spacing:.06em;text-decoration:none;cursor:pointer}
+.btn.main{background:#000;color:#fff;border:2px solid #000;box-shadow:5px 5px 0 var(--violet)}
+.btn.main:hover{box-shadow:2px 2px 0 var(--pink);transform:translate(3px,3px)}
+.btn.ghost{border:2px solid var(--ink);color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+.tba{margin-top:20px;font:400 .8rem 'Space Mono',monospace;color:var(--muted)}
+.clock{margin-top:30px;background:radial-gradient(circle at 80% 0,#4c1d95,transparent 60%),linear-gradient(135deg,#0a0820,#1a1145);color:#fff;border-radius:26px;padding:20px 24px 14px;border:1px solid #3b3380;max-width:560px}
+.clock .t{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.u{text-align:center;flex:1}
+.u strong{display:block;font:900 clamp(2rem,6vw,3.3rem)/1 'Orbitron',sans-serif;text-shadow:0 0 18px rgba(34,211,238,.7)}
+.u span{font:400 .72rem 'Space Mono',monospace;color:#bdb6ee}
+.colon{font:700 2rem 'Orbitron';color:var(--pink);padding-bottom:16px}
+.clock p{margin:10px 0 0;font:400 .72rem 'Space Mono',monospace;color:#bdb6ee;text-align:center}
+.side{display:grid;gap:16px}
+.dark{background:linear-gradient(160deg,#000,#1b1640);color:var(--on-night);border-radius:22px;padding:22px;border:1px solid #3a3470}
+.dark h2{margin:0 0 12px;font:700 1.05rem 'Orbitron',sans-serif}
+.dark a.row{display:flex;justify-content:space-between;padding:12px 0;border-top:1px solid #34306a;text-decoration:none;font-weight:500}
+.dark a.row:hover{color:var(--cyan)}
+.date{background:radial-gradient(circle at 85% 30%,#a855f7 0,#4c1d95 18%,transparent 19%),#07061a}
+.date .d{font:700 1.15rem 'Orbitron';margin-bottom:4px}
+.n{font:400 .78rem 'Space Mono',monospace;color:#bdb6ee}
+.light{background:var(--paper);color:var(--ink);border-radius:22px;padding:22px;border:2px solid var(--ink)}
+.light h2{margin:0 0 10px;font:700 .95rem 'Orbitron';color:var(--violet)}
+.light a.row{display:flex;justify-content:space-between;padding:11px 0;border-top:1px solid var(--line);text-decoration:none;font-weight:600}
+.light a.row:hover{color:var(--violet)}
+section{padding:72px 0}
+.dk{background:var(--night);color:var(--on-night)}
+h2.sec{font:900 clamp(1.6rem,4vw,2.5rem)/1.1 'Orbitron',sans-serif;margin:0 0 10px}
+.intro{color:var(--muted);max-width:42em;margin:0 0 34px}
+.dk .intro{color:#bdb6ee}
+.hl{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin:0;padding:0;list-style:none}
+.hl li{border:2px solid var(--ink);border-radius:18px;padding:20px;background:var(--paper)}
+.hl b{display:block;font:900 1.9rem/1.1 'Orbitron';color:var(--violet);margin-bottom:6px}
+.prize{display:grid;grid-template-columns:1.1fr 1fr;gap:30px;align-items:center}
+@media(max-width:800px){.prize{grid-template-columns:1fr}}
+.pool{font:900 clamp(3rem,10vw,5.5rem)/1 'Orbitron';background:linear-gradient(90deg,var(--cyan),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent;margin:6px 0}
+.awards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0;padding:0;list-style:none}
+@media(max-width:520px){.awards{grid-template-columns:1fr 1fr}}
+.awards li{background:var(--card);border:1px solid #3a3470;border-radius:14px;padding:14px;font-size:.85rem}
+.awards b{display:block;font:700 1.1rem 'Orbitron';color:var(--cyan)}
+.doms{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px}
+.dom{display:block;text-decoration:none;border-radius:20px;padding:22px 20px 24px;min-height:190px;color:#fff;background:#000;border:1px solid #3a3470;position:relative;overflow:hidden}
+.dom::before{content:"";position:absolute;right:-30px;top:-30px;width:110px;height:110px;border-radius:50%;background:var(--c);filter:blur(6px);opacity:.85}
+.dom h3{position:relative;margin:56px 0 6px;font:700 1.1rem 'Orbitron'}
+.dom p{position:relative;margin:0;font-size:.85rem;color:#d4cff5}
+.dom:hover{border-color:var(--c)}
+.steps{max-width:760px;border-left:3px solid var(--cyan);margin-left:8px}
+.step{padding:0 0 22px 26px;position:relative}
+.step::before{content:"";position:absolute;left:-10px;top:6px;width:17px;height:17px;background:var(--night);border:3px solid var(--cyan);border-radius:50%}
+.step h3{margin:0;font:700 1.05rem 'Orbitron'}
+.step p{margin:2px 0 0;color:#bdb6ee}
+.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.tier{border:2px dashed var(--ink);border-radius:18px;padding:24px;text-align:center}
+.tier b{font:700 1rem 'Orbitron';display:block}
+.tier span{font:400 .78rem 'Space Mono',monospace;color:var(--muted)}
+.final{text-align:center;background:linear-gradient(135deg,#1a0b3d,#050410 60%);color:#fff}
+.final h2{font:400 clamp(2rem,6vw,3.6rem)/1.05 'Rubik Mono One';text-transform:uppercase;margin:0 0 16px}
+.final .btn.main{background:#fff;color:#000;border-color:#fff;box-shadow:5px 5px 0 var(--pink)}
+footer{background:#000;color:#cfcaf0;padding:48px 0 30px;font-size:.9rem}
+footer .cols{display:grid;grid-template-columns:1.4fr 2fr;gap:30px}
+@media(max-width:760px){footer .cols{grid-template-columns:1fr}}
+footer ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:2px}
+footer a{display:inline-block;padding:6px 0;color:#cfcaf0}
+footer a:hover{color:var(--cyan)}
+.disc{border-top:1px solid #2a2550;margin-top:26px;padding-top:18px;font:400 .78rem/1.6 'Space Mono',monospace;color:#9d97c8}
+.sr{position:absolute;left:-9999px}
+.skip:focus{left:12px;top:12px;background:#fff;color:#000;padding:10px 16px;z-index:50;border-radius:8px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+
+/* About page additions */
+.crumbs{padding:14px 0 0;font:400 .8rem 'Space Mono',monospace;color:var(--muted)}
+.crumbs ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.crumbs li+li::before{content:"\203A";margin-right:6px}
+.crumbs a{padding:4px 0;display:inline-block}
+.phero{position:relative;overflow:hidden;padding:30px 0 64px;isolation:isolate}
+.phero h1{font-size:clamp(2.1rem,6vw,4.2rem)}
+.two{display:grid;grid-template-columns:1.1fr 1fr;gap:34px;align-items:start}
+@media(max-width:860px){.two{grid-template-columns:1fr}}
+.two p{margin:0 0 14px;color:var(--muted)}
+.dk .two p{color:#bdb6ee}
+.fact{background:var(--card);color:var(--on-night);border:1px solid #3a3470;border-radius:22px;padding:22px}
+.fact h3{margin:0 0 10px;font:700 1rem 'Orbitron',sans-serif;color:var(--cyan)}
+.fact dl{margin:0}.fact dt{font:700 .75rem 'Space Mono',monospace;color:#bdb6ee;margin-top:12px}
+.fact dd{margin:0;font-weight:500}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:0;padding:0;list-style:none}
+.cards li{border:2px solid var(--ink);border-radius:18px;padding:22px;background:var(--paper)}
+.cards h3{margin:0 0 6px;font:700 1.05rem 'Orbitron',sans-serif}
+.cards p{margin:0;color:var(--muted);font-size:.95rem}
+.cards .ic{width:38px;height:38px;border-radius:12px;background:var(--violet);color:#fff;display:grid;place-items:center;font:700 .9rem 'Orbitron';margin-bottom:12px}
+.dk .cards li{background:var(--card);border-color:#3a3470}
+.dk .cards p{color:#bdb6ee}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0;padding:0;list-style:none}
+.chips li{border:1px solid var(--ink);border-radius:999px;padding:6px 16px;font:700 .78rem 'Space Mono',monospace}
+.chips a{text-decoration:none}.chips li:hover{background:var(--ink);color:var(--paper)}
+.note{border-left:4px solid var(--pink);background:var(--card);color:var(--on-night);border-radius:0 14px 14px 0;padding:14px 18px;font-size:.92rem;margin:20px 0 0}
+.note.lt{background:var(--paper);color:var(--ink);border-left-color:var(--violet);border:1px solid var(--line);border-left:4px solid var(--violet)}
+.val{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.val div{border:1px solid #3a3470;background:var(--card);border-radius:18px;padding:20px}
+.val h3{margin:0 0 6px;font:700 1rem 'Orbitron',sans-serif;color:var(--cyan)}
+.val p{margin:0;color:#bdb6ee;font-size:.92rem}
+.disclose{border:2px dashed var(--ink);border-radius:22px;padding:28px}
+.disclose h2{margin-top:0}
+.rel{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+
+/* Refined About-page presentation */
+.phero{padding:24px 0 76px}
+.phero .wrap{position:relative}
+.phero .sealrow{box-shadow:0 8px 24px rgba(124,58,237,.09)}
+.phero h1{max-width:900px;letter-spacing:-.035em;text-wrap:balance}
+.phero .lead{font-size:1.08rem;max-width:44em;line-height:1.8}
+.phero .hero-panel{position:relative;min-height:245px;overflow:hidden;border-radius:26px;
+  border:1px solid #3a3470;background:radial-gradient(circle at 78% 20%,rgba(34,211,238,.2),transparent 26%),
+  radial-gradient(circle at 24% 90%,rgba(255,95,162,.22),transparent 35%),linear-gradient(135deg,#080617,#1b1241);
+  color:#ece9ff;padding:26px;display:flex;flex-direction:column;justify-content:space-between}
+.hero-panel .panel-kicker{font:700 .72rem 'Space Mono',monospace;letter-spacing:.12em;color:var(--cyan)}
+.hero-panel .panel-title{font:700 clamp(1.35rem,3vw,2.1rem)/1.2 'Orbitron',sans-serif;max-width:12em;margin:18px 0}
+.hero-panel .orbit{position:absolute;width:220px;height:220px;border:1px solid rgba(34,211,238,.45);border-radius:50%;right:-40px;top:30px;box-shadow:0 0 0 22px rgba(124,58,237,.08),0 0 0 48px rgba(255,95,162,.06)}
+.hero-panel .orbit:before,.hero-panel .orbit:after{content:"";position:absolute;border:1px solid rgba(255,95,162,.6);border-radius:50%;inset:24px;transform:rotate(38deg) scaleX(1.45)}
+.hero-panel .orbit:after{inset:52px;border-color:rgba(34,211,238,.55);transform:rotate(-32deg) scaleX(1.7)}
+.phero .quick-points{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:24px}
+.quick-points div{padding:14px;border:1px solid var(--line);border-radius:14px;background:color-mix(in srgb,var(--paper) 86%,transparent)}
+.quick-points b{display:block;font:700 .85rem 'Orbitron',sans-serif;color:var(--violet);margin-bottom:3px}
+.quick-points span{font-size:.78rem;color:var(--muted)}
+section{scroll-margin-top:100px}
+.cards li,.val div,.fact,.disclose{transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.cards li:hover,.val div:hover{transform:translateY(-3px);border-color:var(--cyan);box-shadow:0 12px 30px rgba(0,0,0,.12)}
+.steps{padding-top:5px}
+.step{padding-bottom:28px}
+.step h3{line-height:1.4}
+.disclose{background:linear-gradient(135deg,rgba(124,58,237,.06),transparent 65%)}
+.rel .btn{font-size:.78rem;padding:11px 17px}
+.final{position:relative;overflow:hidden}
+.final:before{content:"";display:block;width:180px;height:180px;border:1px solid rgba(34,211,238,.35);border-radius:50%;position:absolute;top:-95px;left:calc(50% - 90px);box-shadow:0 0 0 24px rgba(124,58,237,.08),0 0 0 50px rgba(255,95,162,.05);pointer-events:none}
+@media(max-width:600px){
+  .phero{padding:18px 0 48px}
+  .phero .quick-points{grid-template-columns:1fr}
+  .hero-panel{min-height:220px!important}
+  .hero-panel .orbit{right:-110px;opacity:.75}
+  .rel{flex-direction:column;align-items:stretch}
+  .rel .btn{justify-content:center}
+}
+@media(prefers-reduced-motion:reduce){
+  .cards li,.val div,.fact,.disclose{transition:none}
+}
+
+
+/* Subtle shared interaction and page-entry motion */
+@keyframes technova-page-enter{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+main{animation:technova-page-enter .24s cubic-bezier(.2,.7,.25,1) both}
+:where(nav a,.btn,.reg,button,.row,.dom,.sponsor-card,.tier){transition:transform .16s ease,box-shadow .18s ease,background-color .18s ease,border-color .18s ease,color .18s ease}
+:where(.btn,.reg,button,.row,.dom,.sponsor-card,.tier):active{transform:scale(.985)}
+nav a:active{transform:scale(.97)}
+@media(prefers-reduced-motion:reduce){main{animation:none!important}:where(nav a,.btn,.reg,button,.row,.dom,.sponsor-card,.tier){transition:none!important}:where(.btn,.reg,button,.row,.dom,.sponsor-card,.tier):active,nav a:active{transform:none!important}}
+
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;padding:12px 0}
+.bar{background:#000;color:#fff;border-radius:999px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 10px 8px 22px;border:1px solid #2a2550;box-shadow:0 0 0 1px rgba(124,58,237,.35),0 10px 30px rgba(0,0,0,.25)}
+.logo{font:400 1.25rem 'Audiowide',sans-serif;text-decoration:none;letter-spacing:.06em;display:flex;align-items:center;gap:10px}
+.logo i{width:18px;height:18px;border:3px solid var(--violet);border-radius:4px;transform:rotate(45deg);box-shadow:0 0 10px var(--cyan) inset}
+nav ul{display:flex;gap:2px;list-style:none;margin:0;padding:0}
+nav a{display:block;padding:8px 11px;border-radius:999px;text-decoration:none;font:500 .82rem 'Poppins',sans-serif}
+nav a:hover,nav a[aria-current]{background:#221d4d}
+.reg{background:#fff;color:#000;font:600 .85rem 'Poppins';text-decoration:none;padding:9px 20px;border-radius:999px;border:1px solid #fff;white-space:nowrap}
+.reg:hover{background:var(--cyan);border-color:var(--cyan)}
+.user-avatar[hidden]{display:none!important}.user-avatar{width:44px;height:44px;flex:0 0 44px;display:inline-flex;align-items:center;justify-content:center;border:2px solid var(--cyan);border-radius:50%;background:linear-gradient(135deg,#7c3aed,#211747);color:#fff;font:700 1rem 'Orbitron',sans-serif;text-decoration:none;box-shadow:0 0 0 3px rgba(34,211,238,.12);letter-spacing:0}.account-menu{position:relative;flex:0 0 auto}.account-dropdown[hidden],.account-menu[hidden]{display:none!important}.account-dropdown{position:absolute;right:0;top:54px;width:230px;padding:10px;background:#080713;color:#f4f1ff;border:1px solid #393264;border-radius:16px;box-shadow:0 16px 44px rgba(0,0,0,.4);z-index:50}.account-summary{padding:10px 10px 12px;border-bottom:1px solid #393264;margin-bottom:6px;overflow-wrap:anywhere}.account-summary strong,.account-summary span{display:block}.account-summary strong{font:700 .82rem 'Orbitron',sans-serif}.account-summary span{font-size:.72rem;color:#bdb6ee;margin-top:4px}.account-dropdown a,.account-dropdown button{display:block;width:100%;text-align:left;padding:11px 10px;border:0;border-radius:9px;background:transparent;color:#f4f1ff;text-decoration:none;font:500 .86rem 'Poppins',sans-serif;cursor:pointer}.account-dropdown a:hover,.account-dropdown button:hover{background:#241d50}.account-dropdown button{color:#ffb5cd}
+.burger{display:none;background:none;border:1px solid #403a80;color:#fff;border-radius:999px;padding:8px 14px;font:600 .8rem 'Poppins';min-height:44px;cursor:pointer}
+@media (max-width:1040px){
+  .burger{display:block}
+  nav{position:absolute;left:20px;right:20px;top:72px;background:#000;border:1px solid #2a2550;border-radius:22px;padding:10px;display:none}
+  nav.open{display:block}
+  nav ul{flex-direction:column}
+  nav a{padding:13px 16px}
+  .bar .reg{margin-left:auto}
+}
+
+</style>
+</head>
+<body>
+<a class="sr skip" href="#main">Skip to main content</a>
+
+<header>
+  <div class="wrap">
+    <div class="bar">
+      <a class="logo" href="home.html" aria-label="TechNova 2026 home"><i aria-hidden="true"></i>TECHNOVA 2026</a>
+      <nav id="nav" aria-label="Main">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html" aria-current="page">About</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="domains.html">Domains</a></li>
+          <li><a href="rules.html">Rules</a></li>
+          <li><a href="prizes-sponsors.html">Prizes &amp; Sponsors</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="updates.html">Updates</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="reg" id="auth-cta" href="user_login.html">Login</a>
+      <div class="account-menu" id="account-menu" hidden>
+<button class="user-avatar" id="user-avatar" type="button" aria-label="Open account menu" aria-expanded="false" aria-controls="account-dropdown" title="Account menu">?</button>
+<div class="account-dropdown" id="account-dropdown" hidden><div class="account-summary"><strong id="account-name">Your account</strong><span id="account-email"></span></div><a href="account.html" role="menuitem">Profile</a><button type="button" id="logout-button" role="menuitem">Log out</button></div>
+</div>
+      <button class="burger" aria-expanded="false" aria-controls="nav" id="burger">Menu</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<div class="phero">
+  <svg class="topo" aria-hidden="true" viewBox="0 0 1200 420" preserveAspectRatio="xMidYMid slice">
+    <g>
+      <ellipse cx="870" cy="190" rx="100" ry="55"></ellipse>
+      <ellipse cx="870" cy="190" rx="160" ry="90"></ellipse>
+      <ellipse cx="870" cy="190" rx="220" ry="125"></ellipse>
+      <ellipse cx="870" cy="190" rx="280" ry="160"></ellipse>
+    </g>
+  </svg>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <ol><a href="home.html"><u>Home</u> >&nbsp; About TechNova</a></ol>
+    </nav>
+    <br>
+    <span class="sealrow"><b aria-hidden="true">T</b>THE STORY BEHIND THE PROTOTYPE</span>
+    <h1>About <div style="color:var(--violet)">TechNova 2026</div><span class="sub">A unified platform for student builders</span></h1>
+    <p class="tag">Discover why TechNova was created and the vision driving our prototype.</p>
+    <p class="lead">Campus events can rely on scattered PDFs, chat groups and fragmented updates. TechNova 2026 is a hypothetical university hackathon prototype conceived to bring event information into one clear, accessible place—helping students discover challenges, collaborate in teams and explore technology-based solutions.</p>
+    <div class="ctas">
+      <a class="btn main" href="#origin">Read the origin story <span aria-hidden="true">↘</span></a>
+      <a class="btn ghost" href="#organizers">Meet the organizing concept</a>
+    </div>
+    <div class="quick-points" aria-label="Project overview">
+      <div><b>PROJECT GOAL</b><span>Design a compact, user-first event website</span></div>
+      <div><b>TARGET USERS</b><span>Students, organizers, judges and sponsors</span></div>
+      <div><b>ARCHITECTURE</b><span>Purpose-built static pages with clear navigation</span></div>
+    </div>
+  </div>
+</div>
+
+<section id="origin" aria-labelledby="origin-heading">
+  <div class="wrap two">
+    <div>
+      <h2 class="sec" id="origin-heading">The origin story</h2>
+      <p>TechNova 2026 begins with a simple observation: university hackathons can encourage digital innovation, but finding the right information about participating is not always straightforward. Schedules, eligibility rules, domains and submission instructions may be spread across posters, documents, social posts and group chats.</p>
+      <p>This prototype explores a better way to organize that information. Its proposed open-domain, 48-hour hackathon uses guided problem statements and a structured participant journey, while the website acts as a single reference point for the event concept.</p>
+      <p>The goal is to reduce avoidable confusion so student teams can focus on exploring a problem, developing an idea and presenting a working prototype.</p>
+    </div>
+    
+  </div>
+</section>
+
+<section class="dk" id="mission" aria-labelledby="mission-heading">
+  <div class="wrap">
+    <h2 class="sec" id="mission-heading">Mission and core values</h2>
+    <p class="intro">Four principles guide the event concept and the way its information is presented.</p>
+    <ul class="cards">
+      <li><div class="ic" aria-hidden="true">01</div><h3>Practical innovation</h3><p>Encourage students to move beyond ideas by designing and building prototypes that respond to a clearly defined problem.</p></li>
+      <li><div class="ic" aria-hidden="true">02</div><h3>Cross-disciplinary teams</h3><p>Support collaboration between students with different strengths, from research and interface design to programming and presentation.</p></li>
+      <li><div class="ic" aria-hidden="true">03</div><h3>Relevant challenge areas</h3><p>Invite exploration across sustainability, education technology, healthcare, finance and related technology domains.</p></li>
+      <li><div class="ic" aria-hidden="true">04</div><h3>Ethical integrity</h3><p>Emphasize originality, responsible development, transparent expectations and appropriate attribution. See the <a href="rules.html" style="color:var(--cyan)">Rules page</a>.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section aria-labelledby="audience-heading">
+  <div class="wrap two">
+    <div>
+      <h2 class="sec" id="audience-heading">Who is TechNova for?</h2>
+      <p>The concept is intended exclusively for current college and university students. It is designed for people interested in applying technology to practical challenges, whether they are drawn to sustainability, education, healthcare, finance or another related field.</p>
+      <p>Previous hackathon experience is not presented as a requirement in this overview. The central idea is to create a structured opportunity for students to learn from one another and contribute complementary skills.</p>
+      <ul class="chips">
+        <li><a href="domains.html">Sustainability</a></li>
+        <li><a href="domains.html">Education technology</a></li>
+        <li><a href="domains.html">Healthcare</a></li>
+        <li><a href="domains.html">Finance</a></li>
+        <li><a href="domains.html">Related technology</a></li>
+      </ul>
+    </div>
+    <aside class="fact">
+      <h3>Why team-based?</h3>
+      <p style="margin:0;color:#bdb6ee">The planning concept allows teams of up to six members. Teamwork can bring together skills such as coding, research, design, testing and communication—while giving participants experience of building something collectively.</p>
+      <p style="margin:14px 0 0;color:#bdb6ee">For the detailed eligibility and team conditions, visit <a href="rules.html" style="color:var(--cyan)">Rules &amp; Eligibility</a>.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="dk" id="format" aria-labelledby="format-heading">
+  <div class="wrap">
+    <h2 class="sec" id="format-heading">The event format</h2>
+    <p class="intro">The proposed 48-hour format is organized around five stages. This is an overview, not a detailed timetable.</p>
+    <div class="steps">
+      <div class="step"><h3>01 — Registration and domain selection</h3><p>Students would form a team, select a challenge area and complete the prototype's demonstration registration flow.</p></div>
+      <div class="step"><h3>02 — Check-in and orientation</h3><p>Participants would receive the event guidance, rules and expectations for the build and submission process.</p></div>
+      <div class="step"><h3>03 — Hackathon development</h3><p>Teams would plan their approach and develop a prototype addressing a selected problem.</p></div>
+      <div class="step"><h3>04 — Mentorship and checkpoints</h3><p>Planned check-ins would give teams opportunities to review progress and identify issues while building.</p></div>
+      <div class="step"><h3>05 — Final project submission</h3><p>Teams would submit their project for review according to the published submission requirements, if the event were formally established.</p></div>
+    </div>
+    <p class="note"><strong>Planning note:</strong> the event's dates, venue and final operational details have not been confirmed. Check the <a href="schedule.html" style="color:var(--cyan)">Schedule page</a> for the prototype's planning information.</p>
+  </div>
+</section>
+
+<section id="organizers" aria-labelledby="organizers-heading">
+  <div class="wrap two">
+    <div>
+      <h2 class="sec" id="organizers-heading">The organizing philosophy</h2>
+      <p>In this hypothetical model, a student organizing team would focus on clear communication, consistent event information and a well-structured participant experience. The prototype does not identify a real club or claim institutional authorization.</p>
+      <p>The proposed team's responsibilities would include:</p>
+      <ul style="color:var(--muted);padding-left:1.2em;margin:0 0 14px">
+        <li>Maintaining a unified set of rules and eligibility information.</li>
+        <li>Coordinating the event stages and mentorship checkpoints.</li>
+        <li>Keeping announcements and website updates accurate and consistent.</li>
+        <li>Preparing clear submission expectations for participants and reviewers.</li>
+        <li>Providing a planned route for participant, judge and sponsor enquiries.</li>
+      </ul>
+    </div>
+    <aside class="fact">
+      <h3>Affiliation and channels</h3>
+      <p style="margin:0;color:#bdb6ee">TechNova 2026 is a class project prototype. It is not affiliated with or authorized by a real Bennett University club or society. No official social channels, speakers, judges or sponsors are represented as confirmed.</p>
+      <h3 style="margin-top:22px">Team mandate</h3>
+      <p style="margin:0;color:#bdb6ee">The organizing identity is illustrative. The site demonstrates how an event team could centralize information rather than presenting a real operating committee.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="dk" aria-labelledby="impact-heading">
+  <div class="wrap">
+    <h2 class="sec" id="impact-heading">Intended ecosystem impact</h2>
+    <p class="intro">These are goals the prototype is designed to support, not outcomes from an event that has already taken place.</p>
+    <div class="val">
+      <div><h3>For participants</h3><p>Hands-on practice, peer collaboration, exposure to mentorship and the opportunity to develop a prototype for a portfolio.</p></div>
+      <div><h3>For organizers</h3><p>A practical exercise in information architecture, user experience, communication and event-planning workflows.</p></div>
+      <div><h3>For judges</h3><p>A more consistent submission structure that could help reviewers compare projects against clearly stated criteria.</p></div>
+      <div><h3>For sponsors</h3><p>A proposed way to introduce industry-relevant challenges and connect with emerging student talent, if sponsors were later confirmed.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <div class="logo" style="color:#fff"><i aria-hidden="true"></i>TECHNOVA 2026</div>
+        <p>A student innovation event concept, presented as an academic website prototype.</p>
+      </div>
+      <ul>
+        <li><a href="home.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="schedule.html">Schedule</a></li>
+        <li><a href="domains.html">Domains</a></li><li><a href="rules.html">Rules</a></li><li><a href="user_login.html?next=register.html">Register</a></li>
+        <li><a href="prizes-sponsors.html">Prizes &amp; Sponsors</a></li><li><a href="faq.html">FAQ</a></li>
+        <li><a href="updates.html">Updates &amp; Archive</a></li><li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+      </div>
+</footer>
+
+<script>
+(function(){
+  var g=document.getElementById('rings'),ns='http://www.w3.org/2000/svg';
+  for(var i=1;i<=22;i++){var e=document.createElementNS(ns,'ellipse');e.setAttribute('cx',640);e.setAttribute('cy',360);e.setAttribute('rx',40+i*34);e.setAttribute('ry',25+i*21);g.appendChild(e);}
+  var b=document.getElementById('burger'),n=document.getElementById('nav');
+  b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o);});
+  n.querySelectorAll('a').forEach(function(link){link.addEventListener('click',function(){n.classList.remove('open');b.setAttribute('aria-expanded','false');});});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&n.classList.contains('open')){n.classList.remove('open');b.setAttribute('aria-expanded','false');b.focus();}});
+})();
+</script>
+<script type="module">
+import { supabase } from "./js/auth.js";
+const cta=document.getElementById("auth-cta"),menu=document.getElementById("account-menu"),avatar=document.getElementById("user-avatar"),dropdown=document.getElementById("account-dropdown"),logout=document.getElementById("logout-button"),name=document.getElementById("account-name"),email=document.getElementById("account-email");
+function signedOut(){if(menu)menu.hidden=true;if(dropdown)dropdown.hidden=true;if(avatar)avatar.setAttribute("aria-expanded","false");if(cta)cta.hidden=false;}
+function signedIn(user){if(!user)return signedOut();const full=(user.user_metadata?.full_name||user.user_metadata?.name||"").trim();if(avatar){avatar.textContent=(full||user.email||"?").charAt(0).toUpperCase();avatar.setAttribute("aria-label","Open account menu");}if(name)name.textContent=full||"Your profile";if(email)email.textContent=user.email||"";if(menu)menu.hidden=false;if(cta)cta.hidden=true;}
+if(avatar)avatar.addEventListener("click",()=>{const open=dropdown.hidden;dropdown.hidden=!open;avatar.setAttribute("aria-expanded",String(open));});
+document.addEventListener("click",event=>{if(menu&&!menu.contains(event.target)){dropdown.hidden=true;avatar?.setAttribute("aria-expanded","false");}});
+document.addEventListener("keydown",event=>{if(event.key==="Escape"&&dropdown){dropdown.hidden=true;avatar?.setAttribute("aria-expanded","false");}});
+if(logout)logout.addEventListener("click",async()=>{logout.disabled=true;logout.textContent="Logging out…";const {error}=await supabase.auth.signOut();if(error){logout.disabled=false;logout.textContent="Log out";alert("Could not log out: "+error.message);return;}location.replace("home.html");});
+const {data:{session},error}=await supabase.auth.getSession();if(error)console.error("Could not read Supabase session:",error.message);signedIn(session?.user||null);supabase.auth.onAuthStateChange((_event,next)=>signedIn(next?.user||null));
+const burger=document.getElementById("burger"),nav=document.getElementById("nav");if(burger&&nav)burger.addEventListener("click",()=>{const open=nav.classList.toggle("open");burger.setAttribute("aria-expanded",String(open));});
+</script>
+</body>
+</html>

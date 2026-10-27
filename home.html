@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TechNova 2026 Hackathon — 48-Hour Open-Domain Student Hackathon</title>
+<meta name="description" content="TechNova 2026 is a fictional 48-hour open-domain student hackathon prototype: free registration, teams of up to six, a proposed ₹1,20,000 prize pool.">
+<link rel="canonical" href="/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@500;700;900&family=Poppins:wght@400;500;600&family=Rubik+Mono+One&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f3f2f7; --line:#c9c6d6; --ink:#14101f; --muted:#4b4660;
+  --night:#0b0a17; --card:#15122b; --violet:#7c3aed; --pink:#ff5fa2; --cyan:#22d3ee; --blush:#f9c6dc;
+  --on-night:#ece9ff;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--paper:#0e0c1c;--line:#2b2750;--ink:#efecff;--muted:#b3adce;--night:#050410;--card:#18143a;}
+}
+:root[data-theme="dark"]{--paper:#0e0c1c;--line:#2b2750;--ink:#efecff;--muted:#b3adce;--night:#050410;--card:#18143a;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 84px)}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1rem/1.65 'Poppins',system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cyan);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.proto{background:var(--ink);color:var(--paper);font:700 .78rem/1.4 'Space Mono',monospace;text-align:center;padding:6px 12px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;padding:12px 0}
+.bar{background:#000;color:#fff;border-radius:999px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 10px 8px 22px;border:1px solid #2a2550;box-shadow:0 0 0 1px rgba(124,58,237,.35),0 10px 30px rgba(0,0,0,.25)}
+.logo{font:400 1.25rem 'Audiowide',sans-serif;text-decoration:none;letter-spacing:.06em;display:flex;align-items:center;gap:10px}
+.logo i{width:18px;height:18px;border:3px solid var(--violet);border-radius:4px;transform:rotate(45deg);box-shadow:0 0 10px var(--cyan) inset}
+nav ul{display:flex;gap:2px;list-style:none;margin:0;padding:0}
+nav a{display:block;padding:8px 11px;border-radius:999px;text-decoration:none;font:500 .82rem 'Poppins',sans-serif}
+nav a:hover,nav a[aria-current]{background:#221d4d}
+.reg{background:#fff;color:#000;font:600 .85rem 'Poppins';text-decoration:none;padding:9px 20px;border-radius:999px;border:1px solid #fff;white-space:nowrap}
+.reg:hover{background:var(--cyan);border-color:var(--cyan)}
+.user-avatar[hidden]{display:none!important}.user-avatar{width:44px;height:44px;flex:0 0 44px;display:inline-flex;align-items:center;justify-content:center;border:2px solid var(--cyan);border-radius:50%;background:linear-gradient(135deg,#7c3aed,#211747);color:#fff;font:700 1rem 'Orbitron',sans-serif;text-decoration:none;box-shadow:0 0 0 3px rgba(34,211,238,.12);letter-spacing:0}.account-menu{position:relative;flex:0 0 auto}.account-dropdown[hidden],.account-menu[hidden]{display:none!important}.account-dropdown{position:absolute;right:0;top:54px;width:230px;padding:10px;background:#080713;color:#f4f1ff;border:1px solid #393264;border-radius:16px;box-shadow:0 16px 44px rgba(0,0,0,.4);z-index:50}.account-summary{padding:10px 10px 12px;border-bottom:1px solid #393264;margin-bottom:6px;overflow-wrap:anywhere}.account-summary strong,.account-summary span{display:block}.account-summary strong{font:700 .82rem 'Orbitron',sans-serif}.account-summary span{font-size:.72rem;color:#bdb6ee;margin-top:4px}.account-dropdown a,.account-dropdown button{display:block;width:100%;text-align:left;padding:11px 10px;border:0;border-radius:9px;background:transparent;color:#f4f1ff;text-decoration:none;font:500 .86rem 'Poppins',sans-serif;cursor:pointer}.account-dropdown a:hover,.account-dropdown button:hover{background:#241d50}.account-dropdown button{color:#ffb5cd}
+.burger{display:none;background:none;border:1px solid #403a80;color:#fff;border-radius:999px;padding:8px 14px;font:600 .8rem 'Poppins';min-height:44px;cursor:pointer}
+@media (max-width:1040px){
+  .burger{display:block}
+  nav{position:absolute;left:20px;right:20px;top:72px;background:#000;border:1px solid #2a2550;border-radius:22px;padding:10px;display:none}
+  nav.open{display:block}
+  nav ul{flex-direction:column}
+  nav a{padding:13px 16px}
+  .bar .reg{margin-left:auto}
+}
+.hero{position:relative;overflow:hidden;padding:56px 0 72px;isolation:isolate}
+.topo{position:absolute;inset:0;width:100%;height:100%;z-index:-1;opacity:.9}
+.topo ellipse{fill:none;stroke:var(--line);stroke-width:1.3}
+.grid{display:grid;grid-template-columns:1.35fr 1fr;gap:36px;align-items:start}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+.sealrow{display:inline-flex;align-items:center;gap:10px;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:5px 16px 5px 6px;font:700 .75rem 'Space Mono',monospace}
+.sealrow b{background:var(--violet);color:#fff;border-radius:50%;width:26px;height:26px;display:grid;place-items:center}
+h1{margin:22px 0 0;font:400 clamp(2.5rem,7.4vw,5.6rem)/.98 'Rubik Mono One',sans-serif;letter-spacing:-.01em;color:var(--ink);text-transform:uppercase}
+h1 .sub{display:inline-block;margin-top:18px;font:700 clamp(1rem,2.4vw,1.5rem)/1.3 'Orbitron',sans-serif;text-transform:none;letter-spacing:.02em;background:linear-gradient(#7637c2, #392077) no-repeat 0 90% / 100% 45%;color:var(--ink)}
+.tag{font:600 1.15rem 'Poppins';margin:26px 0 6px;max-width:34em}
+.lead{color:var(--muted);max-width:36em;margin:0}
+.ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:12px 28px;border-radius:14px;font:700 .9rem 'Orbitron',sans-serif;letter-spacing:.06em;text-decoration:none;cursor:pointer}
+.btn.main{background:#000;color:#fff;border:2px solid #000;box-shadow:5px 5px 0 var(--violet)}
+.btn.main:hover{box-shadow:2px 2px 0 var(--pink);transform:translate(3px,3px)}
+.btn.ghost{border:2px solid var(--ink);color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+.tba{margin-top:20px;font:400 .8rem 'Space Mono',monospace;color:var(--muted)}
+.clock{margin-top:30px;background:radial-gradient(circle at 80% 0,#4c1d95,transparent 60%),linear-gradient(135deg,#0a0820,#1a1145);color:#fff;border-radius:26px;padding:20px 24px 14px;border:1px solid #3b3380;max-width:560px}
+.clock .t{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.u{text-align:center;flex:1}
+.u strong{display:block;font:900 clamp(2rem,6vw,3.3rem)/1 'Orbitron',sans-serif;text-shadow:0 0 18px rgba(34,211,238,.7)}
+.u span{font:400 .72rem 'Space Mono',monospace;color:#bdb6ee}
+.colon{font:700 2rem 'Orbitron';color:var(--pink);padding-bottom:16px}
+.clock p{margin:10px 0 0;font:400 .72rem 'Space Mono',monospace;color:#bdb6ee;text-align:center}
+.side{display:grid;gap:16px}
+.dark{background:linear-gradient(160deg,#000,#1b1640);color:var(--on-night);border-radius:22px;padding:22px;border:1px solid #3a3470}
+.dark h2{margin:0 0 12px;font:700 1.05rem 'Orbitron',sans-serif}
+.dark a.row{display:flex;justify-content:space-between;padding:12px 0;border-top:1px solid #34306a;text-decoration:none;font-weight:500}
+.dark a.row:hover{color:var(--cyan)}
+.date{background:radial-gradient(circle at 85% 30%,#a855f7 0,#4c1d95 18%,transparent 19%),#07061a}
+.date .d{font:700 1.15rem 'Orbitron';margin-bottom:4px}
+.n{font:400 .78rem 'Space Mono',monospace;color:#bdb6ee}
+.light{background:var(--paper);color:var(--ink);border-radius:22px;padding:22px;border:2px solid var(--ink)}
+.light h2{margin:0 0 10px;font:700 .95rem 'Orbitron';color:var(--violet)}
+.light a.row{display:flex;justify-content:space-between;padding:11px 0;border-top:1px solid var(--line);text-decoration:none;font-weight:600}
+.light a.row:hover{color:var(--violet)}
+section{padding:72px 0}
+.dk{background:var(--night);color:var(--on-night)}
+h2.sec{font:900 clamp(1.6rem,4vw,2.5rem)/1.1 'Orbitron',sans-serif;margin:0 0 10px}
+.intro{color:var(--muted);max-width:42em;margin:0 0 34px}
+.dk .intro{color:#bdb6ee}
+.hl{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin:0;padding:0;list-style:none}
+.hl li{border:2px solid var(--ink);border-radius:18px;padding:20px;background:var(--paper)}
+.hl b{display:block;font:900 1.9rem/1.1 'Orbitron';color:var(--violet);margin-bottom:6px}
+.prize{display:grid;grid-template-columns:1.1fr 1fr;gap:30px;align-items:center}
+@media(max-width:800px){.prize{grid-template-columns:1fr}}
+.pool{font:900 clamp(3rem,10vw,5.5rem)/1 'Orbitron';background:linear-gradient(90deg,var(--cyan),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent;margin:6px 0}
+.awards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0;padding:0;list-style:none}
+@media(max-width:520px){.awards{grid-template-columns:1fr 1fr}}
+.awards li{background:var(--card);border:1px solid #3a3470;border-radius:14px;padding:14px;font-size:.85rem}
+.awards b{display:block;font:700 1.1rem 'Orbitron';color:var(--cyan)}
+.doms{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px}
+.dom{display:block;text-decoration:none;border-radius:20px;padding:22px 20px 24px;min-height:190px;color:#fff;background:#000;border:1px solid #3a3470;position:relative;overflow:hidden}
+.dom::before{content:"";position:absolute;right:-30px;top:-30px;width:110px;height:110px;border-radius:50%;background:var(--c);filter:blur(6px);opacity:.85}
+.dom h3{position:relative;margin:56px 0 6px;font:700 1.1rem 'Orbitron'}
+.dom p{position:relative;margin:0;font-size:.85rem;color:#d4cff5}
+.dom:hover{border-color:var(--c)}
+.steps{max-width:760px;border-left:3px solid var(--cyan);margin-left:8px}
+.step{padding:0 0 22px 26px;position:relative}
+.step::before{content:"";position:absolute;left:-10px;top:6px;width:17px;height:17px;background:var(--night);border:3px solid var(--cyan);border-radius:50%}
+.step h3{margin:0;font:700 1.05rem 'Orbitron'}
+.step p{margin:2px 0 0;color:#bdb6ee}
+.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.tier{border:2px dashed var(--ink);border-radius:18px;padding:24px;text-align:center}
+.tier b{font:700 1rem 'Orbitron';display:block}
+.tier span{font:400 .78rem 'Space Mono',monospace;color:var(--muted)}
+.sponsor-preview{background:var(--night);color:var(--on-night)}
+.sponsor-preview .intro{color:#bdb6ee}
+.sponsor-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;align-items:stretch}
+.sponsor-card{display:flex;flex-direction:column;padding:22px;border-radius:20px;background:linear-gradient(150deg,#090717,#1b1640);color:var(--on-night);border:2px solid #f4f1ff;box-shadow:0 0 0 1px rgba(255,255,255,.08),0 8px 28px rgba(0,0,0,.22);transition:transform .18s ease,box-shadow .18s ease}
+.sponsor-card:hover{transform:translateY(-3px);box-shadow:0 0 0 1px rgba(255,255,255,.2),0 0 22px rgba(124,58,237,.25)}
+.sponsor-card h3{margin:18px 0 8px;color:#fff;font:700 1.05rem 'Orbitron',sans-serif}
+.sponsor-card p{color:#c8c1e8;margin:0 0 12px;font-size:.88rem}
+.sponsor-card .tier-label{color:var(--cyan);font:700 .66rem 'Space Mono',monospace;letter-spacing:.025em;min-height:2.2em}
+.sponsor-logo{height:104px;margin:16px 0 6px;padding:14px 16px;border:1px solid rgba(255,255,255,.18);border-radius:12px;background:#fff;color:#111;display:flex;align-items:center;justify-content:center;gap:12px;overflow:hidden}
+.bennett-logo img{width:42px;height:42px;object-fit:contain}
+.bennett-logo span{display:flex;flex-direction:column;line-height:1.1;color:#012150}
+.bennett-logo strong{font:700 clamp(1rem,2vw,1.2rem) 'Poppins',sans-serif;letter-spacing:.04em}
+.bennett-logo small{font:600 .72rem 'Poppins',sans-serif;letter-spacing:.2em;margin-top:4px}
+.bennett-logo em{font:500 .5rem 'Poppins',sans-serif;font-style:normal;letter-spacing:.1em;margin-top:6px}
+.microsoft-logo svg{width:42px;height:42px;flex:0 0 auto}
+.microsoft-logo strong{font:600 clamp(1.05rem,2vw,1.35rem) 'Poppins',sans-serif;letter-spacing:-.06em;color:#5e5e5e}
+.aws-logo{flex-direction:column;gap:0;color:#232f3e}
+.aws-logo strong{font:700 2.4rem/1 'Poppins',sans-serif;letter-spacing:-.08em}
+.aws-logo span{font:500 .56rem 'Poppins',sans-serif;margin-top:-2px}
+.aws-logo svg{width:104px;height:16px;margin-top:-2px}
+.sponsor-status{font-size:.78rem!important;padding-top:12px!important;margin: auto 0 0!important;border-top:1px solid rgba(255,255,255,.18)}
+.sponsor-status strong{color:#fff}
+@media(max-width:560px){.sponsor-logo{height:94px}.sponsor-card{padding:18px}}
+.final{text-align:center;background:linear-gradient(135deg,#1a0b3d,#050410 60%);color:#fff}
+.final h2{font:400 clamp(2rem,6vw,3.6rem)/1.05 'Rubik Mono One';text-transform:uppercase;margin:0 0 16px}
+.final .btn.main{background:#fff;color:#000;border-color:#fff;box-shadow:5px 5px 0 var(--pink)}
+footer{background:#000;color:#cfcaf0;padding:48px 0 30px;font-size:.9rem}
+footer .cols{display:grid;grid-template-columns:1.4fr 2fr;gap:30px}
+@media(max-width:760px){footer .cols{grid-template-columns:1fr}}
+footer ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:2px}
+footer a{display:inline-block;padding:6px 0;color:#cfcaf0}
+footer a:hover{color:var(--cyan)}
+.disc{border-top:1px solid #2a2550;margin-top:26px;padding-top:18px;font:400 .78rem/1.6 'Space Mono',monospace;color:#9d97c8}
+.sr{position:absolute;left:-9999px}
+.skip:focus{left:12px;top:12px;background:#fff;color:#000;padding:10px 16px;z-index:50;border-radius:8px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+
+/* Subtle shared interaction and page-entry motion */
+@keyframes technova-page-enter{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+main{animation:technova-page-enter .24s cubic-bezier(.2,.7,.25,1) both}
+:where(nav a,.btn,.reg,button,.row,.dom,.sponsor-card,.tier){transition:transform .16s ease,box-shadow .18s ease,background-color .18s ease,border-color .18s ease,color .18s ease}
+:where(.btn,.reg,button,.row,.dom,.sponsor-card,.tier):active{transform:scale(.985)}
+nav a:active{transform:scale(.97)}
+@media(prefers-reduced-motion:reduce){main{animation:none!important}:where(nav a,.btn,.reg,button,.row,.dom,.sponsor-card,.tier){transition:none!important}:where(.btn,.reg,button,.row,.dom,.sponsor-card,.tier):active,nav a:active{transform:none!important}}
+
+</style>
+</head>
+<body>
+<a class="sr skip" href="#main">Skip to main content</a>
+
+<header>
+  <div class="wrap">
+    <div class="bar">
+      <a class="logo" href="home.html" aria-label="TechNova 2026 home"><i aria-hidden="true"></i>TECHNOVA 2026</a>
+      <nav id="nav" aria-label="Main">
+        <ul>
+          <li><a href="home.html" aria-current="page">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="domains.html">Domains</a></li>
+          <li><a href="rules.html">Rules</a></li>
+          <li><a href="prizes-sponsors.html">Prizes &amp; Sponsors</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="updates.html">Updates</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="reg" id="auth-cta" href="user_login.html">Login </a>
+      <div class="account-menu" id="account-menu" hidden>
+        <button class="user-avatar" id="user-avatar" type="button" aria-label="Open account menu" aria-expanded="false" aria-controls="account-dropdown" title="Account menu">?</button>
+        <div class="account-dropdown" id="account-dropdown" hidden>
+          <div class="account-summary"><strong id="account-name">Your account</strong><span id="account-email"></span></div>
+          <a href="account.html" role="menuitem">Profile</a>
+          <button type="button" id="logout-button" role="menuitem">Log out</button>
+        </div>
+      </div>
+      <button class="burger" aria-expanded="false" aria-controls="nav" id="burger">Menu</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<div class="hero">
+  <svg class="topo" aria-hidden="true" viewBox="0 0 1200 760" preserveAspectRatio="xMidYMid slice">
+    <defs><filter id="w" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.006 0.009" numOctaves="2" seed="7"/><feDisplacementMap in="SourceGraphic" scale="150"/></filter></defs>
+    <g filter="url(#w)" id="rings"></g>
+  </svg>
+  <div class="wrap grid">
+    <div>
+      <span class="sealrow"><b aria-hidden="true">T</b>Open to current college &amp; university students</span>
+      <h1>TechNova 2026<span class="sub">48-Hour Open-Domain Student Hackathon</span></h1>
+      <p class="tag">Build solutions to real-world problems with your team.</p>
+      <p class="lead">TechNova 2026 brings student teams together to design, build and present technology projects across sustainability, education, healthcare and finance. Pick a domain, form a team of up to six, and ship a working prototype.</p>
+      <div class="ctas">
+        <a class="btn main" href="register.html">Register your team &raquo;</a>
+        <a class="btn ghost" href="domains.html">Domains &amp; problem statements</a>
+      </div>
+      <p class="tba">Date and venue: to be announced.</p>
+      <div class="clock" role="timer" aria-label="Illustrative countdown to a sample start date">
+        <div class="t">
+          <div class="u"><strong id="d">00</strong><span>Days</span></div><div class="colon">:</div>
+          <div class="u"><strong id="h">00</strong><span>Hours</span></div><div class="colon">:</div>
+          <div class="u"><strong id="m">00</strong><span>Minutes</span></div><div class="colon">:</div>
+          <div class="u"><strong id="s">00</strong><span>Seconds</span></div>
+        </div>
+      
+      </div>
+    </div>
+    <aside class="side" aria-label="Quick facts">
+      <div class="dark date">
+        <div class="d">Dates: TBA</div>
+        <div class="n">Friday-to-Sunday format</div>
+        <a class="row" href="rules.html">Rules &amp; eligibility <span aria-hidden="true">&rsaquo;</span></a>
+        <a class="row" href="schedule.html">Schedule <span aria-hidden="true">&rsaquo;</span></a>
+      </div>
+      <div class="light">
+        <h2>Problem statements</h2>
+        <a class="row" href="domains.html">Sustainability &amp; Healthcare <span aria-hidden="true">&rsaquo;</span></a>
+        <a class="row" href="domains.html">EdTech &amp; Finance <span aria-hidden="true">&rsaquo;</span></a>
+      </div>
+      <div class="dark">
+        <h2>Information</h2>
+        <a class="row" href="about.html">About TechNova <span aria-hidden="true">&rsaquo;</span></a>
+        <a class="row" href="faq.html">FAQ <span aria-hidden="true">&rsaquo;</span></a>
+      </div>
+      <div class="dark">
+        <h2>Organized by</h2>
+        <div class="n">A class project team. No institutional authorization is claimed.</div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<section aria-labelledby="hl">
+  <div class="wrap">
+    <h2 class="sec" id="hl">Event highlights</h2>
+    <p class="intro">The essentials at a glance. The rules page has the full details.</p>
+    <ul class="hl">
+      <li><b>Open</b>Open-domain format with guided problem statements.</li>
+      <li><b>Students</b>For current college and university students.</li>
+      <li><b>6 max</b>Teams of up to six members.</li>
+      <li><b>Free</b>Registration costs nothing.</li>
+      <li><b>48 hrs</b>A 48-hour concept. The draft timetable gives roughly 39 building hours, so the length is flagged for confirmation on the <a href="schedule.html">schedule</a>.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="dk" aria-labelledby="pz">
+  <div class="wrap prize">
+    <div>
+      <h2 class="sec" id="pz">Proposed prize pool</h2>
+      <div class="pool">₹1,20,000</div>
+      <p class="intro">An overall winner, two runners-up and three special awards. Prototype information, not a real prize commitment.</p>
+      <a class="btn main" style="background:#fff;color:#000;border-color:#fff;box-shadow:5px 5px 0 var(--violet)" href="prizes-sponsors.html">See all prizes</a>
+    </div>
+    <ul class="awards">
+      <li><b>₹50,000</b>Overall Winner</li>
+      <li><b>₹30,000</b>First Runner-Up</li>
+      <li><b>₹20,000</b>Second Runner-Up</li>
+      <li><b>₹10,000</b>Best Innovation</li>
+      <li><b>₹5,000</b>Best UI/UX</li>
+      <li><b>₹5,000</b>Best Social Impact</li>
+    </ul>
+  </div>
+</section>
+
+<section aria-labelledby="dm">
+  <div class="wrap">
+    <h2 class="sec" id="dm">Choose your domain</h2>
+    <p class="intro">Five areas to build in. Each card opens the full list of problem statements.</p>
+    <div class="doms">
+      <a class="dom" style="--c:#22c55e" href="domains.html"><h3>Sustainability</h3><p>Energy, waste and climate tools.</p></a>
+      <a class="dom" style="--c:#7c3aed" href="domains.html"><h3>Education Technology</h3><p>Learning access and student support.</p></a>
+      <a class="dom" style="--c:#ff5fa2" href="domains.html"><h3>Healthcare</h3><p>Access, information and workflows.</p></a>
+      <a class="dom" style="--c:#22d3ee" href="domains.html"><h3>Finance</h3><p>Literacy, budgeting and inclusion.</p></a>
+      <a class="dom" style="--c:#f59e0b" href="domains.html"><h3>Sponsor Tracks</h3><p>Proposed sponsor-set challenges.</p></a>
+    </div>
+  </div>
+</section>
+
+<section class="sponsor-preview" aria-labelledby="sp">
+  <div class="wrap">
+    <h2 class="sec" id="sp">Sponsor opportunities</h2>
+    <p class="intro">These sponsor and partner marks are visual concepts for the class prototype only. No sponsorship, partnership or endorsement is confirmed.</p>
+    <div class="sponsor-cards">
+      <article class="sponsor-card">
+        <span class="tier-label">TIER 01 · TITLE SPONSOR CONCEPT</span>
+        <div class="sponsor-logo bennett-logo" role="img" aria-label="Bennett University logo concept">
+          <img src="https://www.google.com/s2/favicons?domain=bennett.edu.in&amp;sz=128" alt="" loading="lazy">
+          <span><strong>BENNETT</strong><small>UNIVERSITY</small><em>THE TIMES GROUP</em></span>
+        </div>
+        <h3>Bennett University</h3>
+        <p>Title sponsor visual concept for the proposed event.</p>
+        <p class="sponsor-status"><strong>Prototype status:</strong> Not confirmed</p>
+      </article>
+      <article class="sponsor-card">
+        <span class="tier-label">TIER 02 · TECHNOLOGY PARTNER CONCEPT</span>
+        <div class="sponsor-logo microsoft-logo" role="img" aria-label="Microsoft logo concept">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="2" y="2" width="16" height="16" fill="#f25022"/><rect x="22" y="2" width="16" height="16" fill="#7fba00"/><rect x="2" y="22" width="16" height="16" fill="#00a4ef"/><rect x="22" y="22" width="16" height="16" fill="#ffb900"/></svg>
+          <strong>Microsoft</strong>
+        </div>
+        <h3>Microsoft</h3>
+        <p>Illustrative technology partner placement for developer tools and learning resources.</p>
+        <p class="sponsor-status"><strong>Prototype status:</strong> Not confirmed</p>
+      </article>
+      <article class="sponsor-card">
+        <span class="tier-label">TIER 03 · CLOUD PARTNER CONCEPT</span>
+        <div class="sponsor-logo aws-logo" role="img" aria-label="Amazon Web Services logo concept">
+          <strong>aws</strong><span>amazon web services</span>
+          <svg viewBox="0 0 120 18" aria-hidden="true"><path d="M8 3 Q60 27 112 3" fill="none" stroke="#ff9900" stroke-width="3" stroke-linecap="round"/><path d="M103 3 L112 3 L109 11" fill="none" stroke="#ff9900" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Amazon Web Services</h3>
+        <p>Illustrative cloud support placement for hosting and prototype deployment.</p>
+        <p class="sponsor-status"><strong>Prototype status:</strong> Not confirmed</p>
+      </article>
+    </div>
+    <p style="margin-top:22px"><a href="prizes-sponsors.html">Explore all prizes and sponsor information →</a></p>
+  </div>
+</section>
+
+<section class="final" aria-labelledby="cta">
+  <div class="wrap">
+    <h2 id="cta">Got a team? Get registered.</h2>
+    <p style="color:#bdb6ee;margin:0 0 24px">Registration is free. This prototype uses a demo form and stores nothing.</p>
+    <a class="btn main" href="register.html">Register your team &raquo;</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <div class="logo" style="color:#fff"><i aria-hidden="true"></i>TECHNOVA 2026</div>
+        <p>Questions? Use the <a href="contact.html">contact page</a>.</p>
+      </div>
+      <ul>
+        <li><a href="home.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="schedule.html">Schedule</a></li>
+        <li><a href="domains.html">Domains</a></li><li><a href="rules.html">Rules</a></li><li><a href="register.html">Register</a></li>
+        <li><a href="prizes-sponsors.html">Prizes &amp; Sponsors</a></li><li><a href="faq.html">FAQ</a></li>
+        <li><a href="updates.html">Updates &amp; Archive</a></li><li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var g=document.getElementById('rings'),ns='http://www.w3.org/2000/svg';
+  for(var i=1;i<=22;i++){var e=document.createElementNS(ns,'ellipse');e.setAttribute('cx',640);e.setAttribute('cy',360);e.setAttribute('rx',40+i*34);e.setAttribute('ry',25+i*21);g.appendChild(e);}
+  var b=document.getElementById('burger'),n=document.getElementById('nav');
+  b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&n.classList.contains('open')){n.classList.remove('open');b.setAttribute('aria-expanded','false');b.focus();}});
+  var t=new Date();t.setDate(t.getDate()+30);t.setHours(20,30,0,0);
+  function p(x){return String(x).padStart(2,'0');}
+  function tick(){var d=Math.max(0,t-new Date()),s=Math.floor(d/1000);
+    document.getElementById('d').textContent=p(Math.floor(s/86400));
+    document.getElementById('h').textContent=p(Math.floor(s%86400/3600));
+    document.getElementById('m').textContent=p(Math.floor(s%3600/60));
+    document.getElementById('s').textContent=p(s%60);}
+  tick();setInterval(tick,1000);
+})();
+</script>
+<script type="module">
+import { supabase } from "./js/auth.js";
+
+const cta = document.getElementById("auth-cta");
+const accountMenu = document.getElementById("account-menu");
+const avatar = document.getElementById("user-avatar");
+const dropdown = document.getElementById("account-dropdown");
+const logoutButton = document.getElementById("logout-button");
+const accountName = document.getElementById("account-name");
+const accountEmail = document.getElementById("account-email");
+
+function setSignedOut() {
+  accountMenu.hidden = true;
+  dropdown.hidden = true;
+  avatar.setAttribute("aria-expanded", "false");
+  cta.hidden = false;
+}
+function setSignedIn(user) {
+  if (!user) return setSignedOut();
+  const metadataName = (user.user_metadata?.full_name || user.user_metadata?.name || "").trim();
+  const initial = (metadataName || user.email || "?").charAt(0).toUpperCase();
+  avatar.textContent = initial;
+  avatar.title = "Open account menu";
+  avatar.setAttribute("aria-label", "Open account menu");
+  accountName.textContent = metadataName || "Your profile";
+  accountEmail.textContent = user.email || "";
+  accountMenu.hidden = false;
+  cta.hidden = true;
+}
+avatar.addEventListener("click", () => {
+  const open = dropdown.hidden;
+  dropdown.hidden = !open;
+  avatar.setAttribute("aria-expanded", String(open));
+});
+document.addEventListener("click", event => {
+  if (!accountMenu.contains(event.target)) {
+    dropdown.hidden = true;
+    avatar.setAttribute("aria-expanded", "false");
+  }
+});
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") {
+    dropdown.hidden = true;
+    avatar.setAttribute("aria-expanded", "false");
+  }
+});
+logoutButton.addEventListener("click", async () => {
+  logoutButton.disabled = true;
+  logoutButton.textContent = "Logging out…";
+  const { error } = await supabase.auth.signOut();
+  if (error) {
+    logoutButton.disabled = false;
+    logoutButton.textContent = "Log out";
+    alert("Could not log out: " + error.message);
+    return;
+  }
+  location.replace("home.html");
+});
+const { data: { session }, error } = await supabase.auth.getSession();
+if (error) console.error("Could not read Supabase session:", error.message);
+setSignedIn(session?.user || null);
+supabase.auth.onAuthStateChange((_event, session) => setSignedIn(session?.user || null));
+</script>
+</body>
+</html>

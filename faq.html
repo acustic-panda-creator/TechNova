@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TechNova 2026 FAQ: Teams, Tools, Deadlines and Prizes</title>
+<meta name="description" content="Answers to common TechNova 2026 hackathon questions: do I need coding experience, team size, tools allowed, submission deadline, prizes and registration.">
+<link rel="canonical" href="/faq">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@500;700;900&family=Poppins:wght@400;500;600&family=Rubik+Mono+One&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<!-- NOTE: replace https://example.com with the deployed domain before launch (canonical stays relative like Home) -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Home",
+   "item": "https://example.com/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "FAQ",
+   "item": "https://example.com/faq"
+  }
+ ]
+}
+</script>
+<style>
+/* ===== SHARED BASE: identical to Home (technova-home-v2.html). Move to one shared stylesheet at integration. ===== */
+:root{
+  --paper:#f3f2f7; --line:#c9c6d6; --ink:#14101f; --muted:#4b4660;
+  --night:#0b0a17; --card:#15122b; --violet:#7c3aed; --pink:#ff5fa2; --cyan:#22d3ee; --blush:#f9c6dc;
+  --on-night:#ece9ff;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--paper:#0e0c1c;--line:#2b2750;--ink:#efecff;--muted:#b3adce;--night:#050410;--card:#18143a;}
+}
+:root[data-theme="dark"]{--paper:#0e0c1c;--line:#2b2750;--ink:#efecff;--muted:#b3adce;--night:#050410;--card:#18143a;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 84px)}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1rem/1.65 'Poppins',system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cyan);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.proto{background:var(--ink);color:var(--paper);font:700 .78rem/1.4 'Space Mono',monospace;text-align:center;padding:6px 12px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;padding:12px 0}
+.bar{background:#000;color:#fff;border-radius:999px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 10px 8px 22px;border:1px solid #2a2550;box-shadow:0 0 0 1px rgba(124,58,237,.35),0 10px 30px rgba(0,0,0,.25)}
+.logo{font:400 1.25rem 'Audiowide',sans-serif;text-decoration:none;letter-spacing:.06em;display:flex;align-items:center;gap:10px}
+.logo i{width:18px;height:18px;border:3px solid var(--violet);border-radius:4px;transform:rotate(45deg);box-shadow:0 0 10px var(--cyan) inset}
+nav ul{display:flex;gap:2px;list-style:none;margin:0;padding:0}
+nav a{display:block;padding:8px 11px;border-radius:999px;text-decoration:none;font:500 .82rem 'Poppins',sans-serif}
+nav a:hover,nav a[aria-current]{background:#221d4d}
+.reg{background:#fff;color:#000;font:600 .85rem 'Poppins';text-decoration:none;padding:9px 20px;border-radius:999px;border:1px solid #fff;white-space:nowrap}
+.reg:hover{background:var(--cyan);border-color:var(--cyan)}
+.burger{display:none;background:none;border:1px solid #403a80;color:#fff;border-radius:999px;padding:8px 14px;font:600 .8rem 'Poppins';min-height:44px;cursor:pointer}
+@media (max-width:1040px){
+  .burger{display:block}
+  nav{position:absolute;left:20px;right:20px;top:72px;background:#000;border:1px solid #2a2550;border-radius:22px;padding:10px;display:none}
+  nav.open{display:block}
+  nav ul{flex-direction:column}
+  nav a{padding:13px 16px}
+  .bar .reg{margin-left:auto}
+}
+.hero{position:relative;overflow:hidden;padding:56px 0 72px;isolation:isolate}
+.topo{position:absolute;inset:0;width:100%;height:100%;z-index:-1;opacity:.9}
+.topo ellipse{fill:none;stroke:var(--line);stroke-width:1.3}
+.grid{display:grid;grid-template-columns:1.35fr 1fr;gap:36px;align-items:start}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+.sealrow{display:inline-flex;align-items:center;gap:10px;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:5px 16px 5px 6px;font:700 .75rem 'Space Mono',monospace}
+.sealrow b{background:var(--violet);color:#fff;border-radius:50%;width:26px;height:26px;display:grid;place-items:center}
+h1{margin:22px 0 0;font:400 clamp(2.5rem,7.4vw,5.6rem)/.98 'Rubik Mono One',sans-serif;letter-spacing:-.01em;color:var(--ink);text-transform:uppercase}
+h1 .sub{display:inline-block;margin-top:18px;font:700 clamp(1rem,2.4vw,1.5rem)/1.3 'Orbitron',sans-serif;text-transform:none;letter-spacing:.02em;background:linear-gradient(var(--blush),var(--blush)) no-repeat 0 90%/100% 45%;color:var(--ink)}
+.tag{font:600 1.15rem 'Poppins';margin:26px 0 6px;max-width:34em}
+.lead{color:var(--muted);max-width:36em;margin:0}
+.ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:12px 28px;border-radius:14px;font:700 .9rem 'Orbitron',sans-serif;letter-spacing:.06em;text-decoration:none;cursor:pointer}
+.btn.main{background:#000;color:#fff;border:2px solid #000;box-shadow:5px 5px 0 var(--violet)}
+.btn.main:hover{box-shadow:2px 2px 0 var(--pink);transform:translate(3px,3px)}
+.btn.ghost{border:2px solid var(--ink);color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+.tba{margin-top:20px;font:400 .8rem 'Space Mono',monospace;color:var(--muted)}
+.clock{margin-top:30px;background:radial-gradient(circle at 80% 0,#4c1d95,transparent 60%),linear-gradient(135deg,#0a0820,#1a1145);color:#fff;border-radius:26px;padding:20px 24px 14px;border:1px solid #3b3380;max-width:560px}
+.clock .t{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.u{text-align:center;flex:1}
+.u strong{display:block;font:900 clamp(2rem,6vw,3.3rem)/1 'Orbitron',sans-serif;text-shadow:0 0 18px rgba(34,211,238,.7)}
+.u span{font:400 .72rem 'Space Mono',monospace;color:#bdb6ee}
+.colon{font:700 2rem 'Orbitron';color:var(--pink);padding-bottom:16px}
+.clock p{margin:10px 0 0;font:400 .72rem 'Space Mono',monospace;color:#bdb6ee;text-align:center}
+.side{display:grid;gap:16px}
+.dark{background:linear-gradient(160deg,#000,#1b1640);color:var(--on-night);border-radius:22px;padding:22px;border:1px solid #3a3470}
+.dark h2{margin:0 0 12px;font:700 1.05rem 'Orbitron',sans-serif}
+.dark a.row{display:flex;justify-content:space-between;padding:12px 0;border-top:1px solid #34306a;text-decoration:none;font-weight:500}
+.dark a.row:hover{color:var(--cyan)}
+.date{background:radial-gradient(circle at 85% 30%,#a855f7 0,#4c1d95 18%,transparent 19%),#07061a}
+.date .d{font:700 1.15rem 'Orbitron';margin-bottom:4px}
+.n{font:400 .78rem 'Space Mono',monospace;color:#bdb6ee}
+.light{background:var(--paper);color:var(--ink);border-radius:22px;padding:22px;border:2px solid var(--ink)}
+.light h2{margin:0 0 10px;font:700 .95rem 'Orbitron';color:var(--violet)}
+.light a.row{display:flex;justify-content:space-between;padding:11px 0;border-top:1px solid var(--line);text-decoration:none;font-weight:600}
+.light a.row:hover{color:var(--violet)}
+section{padding:72px 0}
+.dk{background:var(--night);color:var(--on-night)}
+h2.sec{font:900 clamp(1.6rem,4vw,2.5rem)/1.1 'Orbitron',sans-serif;margin:0 0 10px}
+.intro{color:var(--muted);max-width:42em;margin:0 0 34px}
+.dk .intro{color:#bdb6ee}
+.hl{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin:0;padding:0;list-style:none}
+.hl li{border:2px solid var(--ink);border-radius:18px;padding:20px;background:var(--paper)}
+.hl b{display:block;font:900 1.9rem/1.1 'Orbitron';color:var(--violet);margin-bottom:6px}
+.prize{display:grid;grid-template-columns:1.1fr 1fr;gap:30px;align-items:center}
+@media(max-width:800px){.prize{grid-template-columns:1fr}}
+.pool{font:900 clamp(3rem,10vw,5.5rem)/1 'Orbitron';background:linear-gradient(90deg,var(--cyan),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent;margin:6px 0}
+.awards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0;padding:0;list-style:none}
+@media(max-width:520px){.awards{grid-template-columns:1fr 1fr}}
+.awards li{background:var(--card);border:1px solid #3a3470;border-radius:14px;padding:14px;font-size:.85rem}
+.awards b{display:block;font:700 1.1rem 'Orbitron';color:var(--cyan)}
+.doms{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px}
+.dom{display:block;text-decoration:none;border-radius:20px;padding:22px 20px 24px;min-height:190px;color:#fff;background:#000;border:1px solid #3a3470;position:relative;overflow:hidden}
+.dom::before{content:"";position:absolute;right:-30px;top:-30px;width:110px;height:110px;border-radius:50%;background:var(--c);filter:blur(6px);opacity:.85}
+.dom h3{position:relative;margin:56px 0 6px;font:700 1.1rem 'Orbitron'}
+.dom p{position:relative;margin:0;font-size:.85rem;color:#d4cff5}
+.dom:hover{border-color:var(--c)}
+.steps{max-width:760px;border-left:3px solid var(--cyan);margin-left:8px}
+.step{padding:0 0 22px 26px;position:relative}
+.step::before{content:"";position:absolute;left:-10px;top:6px;width:17px;height:17px;background:var(--night);border:3px solid var(--cyan);border-radius:50%}
+.step h3{margin:0;font:700 1.05rem 'Orbitron'}
+.step p{margin:2px 0 0;color:#bdb6ee}
+.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.tier{border:2px dashed var(--ink);border-radius:18px;padding:24px;text-align:center}
+.tier b{font:700 1rem 'Orbitron';display:block}
+.tier span{font:400 .78rem 'Space Mono',monospace;color:var(--muted)}
+.final{text-align:center;background:linear-gradient(135deg,#1a0b3d,#050410 60%);color:#fff}
+.final h2{font:400 clamp(2rem,6vw,3.6rem)/1.05 'Rubik Mono One';text-transform:uppercase;margin:0 0 16px}
+.final .btn.main{background:#fff;color:#000;border-color:#fff;box-shadow:5px 5px 0 var(--pink)}
+footer{background:#000;color:#cfcaf0;padding:48px 0 30px;font-size:.9rem}
+footer .cols{display:grid;grid-template-columns:1.4fr 2fr;gap:30px}
+@media(max-width:760px){footer .cols{grid-template-columns:1fr}}
+footer ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:2px}
+footer a{display:inline-block;padding:6px 0;color:#cfcaf0}
+footer a:hover{color:var(--cyan)}
+.disc{border-top:1px solid #2a2550;margin-top:26px;padding-top:18px;font:400 .78rem/1.6 'Space Mono',monospace;color:#9d97c8}
+.sr{position:absolute;left:-9999px}
+.skip:focus{left:12px;top:12px;background:#fff;color:#000;padding:10px 16px;z-index:50;border-radius:8px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+/* ===== PAGE-SPECIFIC: /faq ===== */
+
+.phead{position:relative;overflow:hidden;padding:28px 0 44px;isolation:isolate}
+.crumb ol{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0 0 18px;padding:0;font:400 .8rem 'Space Mono',monospace;color:var(--muted)}
+.crumb li+li::before{content:"/";margin-right:6px}
+.phead h1{font-size:clamp(2rem,5.6vw,3.8rem);margin:0}
+.phead .lead{margin-top:18px}
+.layout{display:grid;grid-template-columns:230px 1fr;gap:44px;align-items:start}
+@media(max-width:900px){.layout{grid-template-columns:1fr;gap:20px}}
+.toc{position:sticky;top:96px;border:2px solid var(--ink);border-radius:18px;padding:16px}
+@media(max-width:900px){.toc{position:static}}
+.toc h2{font:700 .9rem 'Orbitron';margin:0 0 6px;color:var(--violet)}
+.toc a{display:block;padding:7px 0;text-decoration:none;font-weight:500;font-size:.9rem;border-top:1px solid var(--line)}
+.toc a:hover{color:var(--violet)}
+.blk{padding:0 0 44px}
+.blk h2{font:900 clamp(1.4rem,3vw,1.9rem)/1.15 'Orbitron';margin:0 0 14px}
+.blk h3{font:700 1.02rem 'Poppins';margin:22px 0 4px}
+.blk p,.blk li{max-width:46em}
+.blk p{margin:0 0 10px}
+.chip{display:inline-block;font:700 .72rem 'Space Mono',monospace;padding:2px 10px;border-radius:999px;vertical-align:middle;margin-left:6px;white-space:nowrap}
+.chip.fixed{background:#7c3aed;color:#fff}
+.chip.prop{background:#f9c6dc;color:#14101f}
+.chip.tbc{border:1.5px dashed var(--ink);color:var(--ink)}
+.note{border-left:4px solid var(--pink);background:var(--card);color:var(--on-night);padding:14px 18px;border-radius:0 14px 14px 0;margin:16px 0;max-width:46em}
+.note a{color:var(--cyan)}
+table{border-collapse:collapse;width:100%;max-width:46em;font-size:.92rem}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:700 .8rem 'Orbitron'}
+.tw{overflow-x:auto}
+.related{border-top:2px solid var(--ink);padding-top:20px;margin-top:10px}
+.related ul{display:flex;flex-wrap:wrap;gap:10px 22px;list-style:none;padding:0;margin:8px 0 0}
+.related a{font-weight:600}
+
+details{border:2px solid var(--ink);border-radius:16px;margin:0 0 10px;max-width:46em;background:var(--paper)}
+summary{cursor:pointer;padding:14px 18px;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px;min-height:48px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font:700 1.3rem Orbitron;color:var(--violet)}
+details[open] summary::after{content:"\2212"}
+details[open]{border-color:var(--violet)}
+.ans{padding:0 18px 12px}.ans p{margin:0 0 8px}
+.tools{display:flex;gap:10px;margin-bottom:22px;flex-wrap:wrap}
+.tools button{background:none;border:2px solid var(--ink);color:var(--ink);border-radius:999px;padding:8px 18px;font:600 .85rem Poppins;min-height:44px;cursor:pointer}
+.tools button:hover{background:var(--ink);color:var(--paper)}
+
+
+/* Subtle shared interaction and page-entry motion */
+@keyframes technova-page-enter{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+main{animation:technova-page-enter .24s cubic-bezier(.2,.7,.25,1) both}
+:where(nav a,.btn,.reg,button,.row,.dom,.sponsor-card,.tier){transition:transform .16s ease,box-shadow .18s ease,background-color .18s ease,border-color .18s ease,color .18s ease}
+:where(.btn,.reg,button,.row,.dom,.sponsor-card,.tier):active{transform:scale(.985)}
+nav a:active{transform:scale(.97)}
+@media(prefers-reduced-motion:reduce){main{animation:none!important}:where(nav a,.btn,.reg,button,.row,.dom,.sponsor-card,.tier){transition:none!important}:where(.btn,.reg,button,.row,.dom,.sponsor-card,.tier):active,nav a:active{transform:none!important}}
+
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;padding:12px 0}
+.bar{background:#000;color:#fff;border-radius:999px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 10px 8px 22px;border:1px solid #2a2550;box-shadow:0 0 0 1px rgba(124,58,237,.35),0 10px 30px rgba(0,0,0,.25)}
+.logo{font:400 1.25rem 'Audiowide',sans-serif;text-decoration:none;letter-spacing:.06em;display:flex;align-items:center;gap:10px}
+.logo i{width:18px;height:18px;border:3px solid var(--violet);border-radius:4px;transform:rotate(45deg);box-shadow:0 0 10px var(--cyan) inset}
+nav ul{display:flex;gap:2px;list-style:none;margin:0;padding:0}
+nav a{display:block;padding:8px 11px;border-radius:999px;text-decoration:none;font:500 .82rem 'Poppins',sans-serif}
+nav a:hover,nav a[aria-current]{background:#221d4d}
+.reg{background:#fff;color:#000;font:600 .85rem 'Poppins';text-decoration:none;padding:9px 20px;border-radius:999px;border:1px solid #fff;white-space:nowrap}
+.reg:hover{background:var(--cyan);border-color:var(--cyan)}
+.user-avatar[hidden]{display:none!important}.user-avatar{width:44px;height:44px;flex:0 0 44px;display:inline-flex;align-items:center;justify-content:center;border:2px solid var(--cyan);border-radius:50%;background:linear-gradient(135deg,#7c3aed,#211747);color:#fff;font:700 1rem 'Orbitron',sans-serif;text-decoration:none;box-shadow:0 0 0 3px rgba(34,211,238,.12);letter-spacing:0}.account-menu{position:relative;flex:0 0 auto}.account-dropdown[hidden],.account-menu[hidden]{display:none!important}.account-dropdown{position:absolute;right:0;top:54px;width:230px;padding:10px;background:#080713;color:#f4f1ff;border:1px solid #393264;border-radius:16px;box-shadow:0 16px 44px rgba(0,0,0,.4);z-index:50}.account-summary{padding:10px 10px 12px;border-bottom:1px solid #393264;margin-bottom:6px;overflow-wrap:anywhere}.account-summary strong,.account-summary span{display:block}.account-summary strong{font:700 .82rem 'Orbitron',sans-serif}.account-summary span{font-size:.72rem;color:#bdb6ee;margin-top:4px}.account-dropdown a,.account-dropdown button{display:block;width:100%;text-align:left;padding:11px 10px;border:0;border-radius:9px;background:transparent;color:#f4f1ff;text-decoration:none;font:500 .86rem 'Poppins',sans-serif;cursor:pointer}.account-dropdown a:hover,.account-dropdown button:hover{background:#241d50}.account-dropdown button{color:#ffb5cd}
+.burger{display:none;background:none;border:1px solid #403a80;color:#fff;border-radius:999px;padding:8px 14px;font:600 .8rem 'Poppins';min-height:44px;cursor:pointer}
+@media (max-width:1040px){
+  .burger{display:block}
+  nav{position:absolute;left:20px;right:20px;top:72px;background:#000;border:1px solid #2a2550;border-radius:22px;padding:10px;display:none}
+  nav.open{display:block}
+  nav ul{flex-direction:column}
+  nav a{padding:13px 16px}
+  .bar .reg{margin-left:auto}
+}
+
+</style>
+</head>
+<body>
+<a class="sr skip" href="#main">Skip to main content</a>
+
+<header>
+  <div class="wrap">
+    <div class="bar">
+      <a class="logo" href="home.html" aria-label="TechNova 2026 home"><i aria-hidden="true"></i>TECHNOVA 2026</a>
+      <nav id="nav" aria-label="Main">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="domains.html">Domains</a></li>
+          <li><a href="rules.html">Rules</a></li>
+          <li><a href="prizes-sponsors.html">Prizes &amp; Sponsors</a></li>
+          <li><a href="faq.html" aria-current="page">FAQ</a></li>
+          <li><a href="updates.html">Updates</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="reg" id="auth-cta" href="user_login.html">Login</a>
+      <div class="account-menu" id="account-menu" hidden>
+<button class="user-avatar" id="user-avatar" type="button" aria-label="Open account menu" aria-expanded="false" aria-controls="account-dropdown" title="Account menu">?</button>
+<div class="account-dropdown" id="account-dropdown" hidden><div class="account-summary"><strong id="account-name">Your account</strong><span id="account-email"></span></div><a href="account.html" role="menuitem">Profile</a><button type="button" id="logout-button" role="menuitem">Log out</button></div>
+</div>
+      <button class="burger" aria-expanded="false" aria-controls="nav" id="burger">Menu</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<div class="phead">
+  <svg class="topo" aria-hidden="true" viewBox="0 0 1200 760" preserveAspectRatio="xMidYMid slice"><defs><filter id="w" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.006 0.009" numOctaves="2" seed="7"/><feDisplacementMap in="SourceGraphic" scale="150"/></filter></defs><g filter="url(#w)" id="rings"></g></svg>
+  <div class="wrap">
+    <nav class="crumb" aria-label="Breadcrumb"><ol><li><a href="home.html">Home</a></li><li aria-current="page">FAQ</li></ol></nav>
+    <h1>TechNova 2026 FAQ</h1>
+    <p class="lead">Quick answers about teams, domains, registration, tools, the schedule and prizes. Each answer links to the page that has the full details.</p>
+  </div>
+</div>
+<section style="padding-top:20px"><div class="wrap layout">
+<aside class="toc" aria-label="Question groups"><h2>Question groups</h2><a href="#eligibility">Eligibility and team formation</a><a href="#domains">Domains and problem statements</a><a href="#registration">Registration</a><a href="#tools">Tools and preparation</a><a href="#schedule">Schedule and submission</a><a href="#prizes">Prizes and judging</a><a href="#practical">Practical information</a></aside>
+<div>
+<div class="note">TechNova 2026 is a fictional class prototype. Where something is not decided, the answer says so. The <a href="rules.html">rules page</a> is the official source if anything looks different.</div>
+<div class="tools"><button type="button" id="ex">Expand all</button><button type="button" id="co">Collapse all</button></div>
+<div class="blk" id="eligibility"><h2>Eligibility and team formation</h2><details><summary>Who can participate?</summary><div class="ans"><p><strong>Only current college or university students can participate.</strong></p><p>Proof of student status will be required, but the method is not decided yet. See <a href="rules.html#who">Rules &amp; Eligibility</a>.</p></div></details><details><summary>Is prior hackathon experience required?</summary><div class="ans"><p><strong>No hackathon experience is required in the proposed format.</strong></p><p>Mentor sessions and checkpoints are planned to help newer teams. This is a proposal, not a final rule.</p></div></details><details><summary>What is the maximum team size?</summary><div class="ans"><p><strong>A team can have up to six members, including the leader.</strong></p><p>See <a href="rules.html#teams">team formation rules</a>.</p></div></details><details><summary>Can one student join multiple teams?</summary><div class="ans"><p><strong>No, each student can belong to only one team.</strong></p><p>Registering the same student twice would break this rule. See <a href="rules.html#teams">the rules</a>.</p></div></details><details><summary>Can a team form during the event?</summary><div class="ans"><p><strong>This has not been decided.</strong></p><p>For now, plan to register a full team in advance through the <a href="user_login.html?next=register.html">registration page</a>. Any change will be posted on <a href="updates.html">Updates</a>.</p></div></details></div><div class="blk" id="domains"><h2>Domains and problem statements</h2><details><summary>What domains are available?</summary><div class="ans"><p><strong>The domains are Sustainability, Education Technology, Healthcare and Finance, plus a proposed Sponsor Tracks option.</strong></p><p>Browse examples on <a href="domains.html">Domains &amp; Problem Statements</a>.</p></div></details><details><summary>Can a team select a sponsor track?</summary><div class="ans"><p><strong>Not yet, because no sponsors are confirmed.</strong></p><p>Sponsor tracks are a proposed format. See <a href="domains.html">Domains</a> and <a href="prizes-sponsors.html">Prizes &amp; Sponsors</a>.</p></div></details><details><summary>Can a team propose its own idea?</summary><div class="ans"><p><strong>Yes, within the supported domains, since the event is open-domain.</strong></p><p>Guided problem statements are there to help, not to limit you. See <a href="domains.html">Domains</a>.</p></div></details><details><summary>Is an idea pitch mandatory?</summary><div class="ans"><p><strong>No, the idea pitch on the registration form is optional.</strong></p><p>You can <a href="user_login.html?next=register.html">register</a> without one.</p></div></details></div><div class="blk" id="registration"><h2>Registration</h2><details><summary>Is registration free?</summary><div class="ans"><p><strong>Yes, registration is free.</strong></p><p>See the <a href="user_login.html?next=register.html">registration page</a>.</p></div></details><details><summary>What information is required?</summary><div class="ans"><p><strong>The demo asks for a team name, leader, member count, member details and a first-choice domain.</strong></p><p>The idea pitch is optional. The form uses made-up data only.</p></div></details><details><summary>What student-identification details are needed?</summary><div class="ans"><p><strong>This has not been decided.</strong></p><p>The demo only accepts sample IDs like DEMO-0001. Never enter a real student ID. Check <a href="rules.html#who">the rules</a> for updates.</p></div></details><details><summary>Is the registration form real or a demonstration?</summary><div class="ans"><p><strong>It is a demonstration.</strong></p><p>It does not register anyone and stores nothing. TechNova 2026 is a fictional class project.</p></div></details></div><div class="blk" id="tools"><h2>Tools and preparation</h2><details><summary>What programming languages or tools may be used?</summary><div class="ans"><p><strong>The draft sets no language or tool list.</strong></p><p>Any limits will be published on <a href="rules.html#requirements">the rules page</a>.</p></div></details><details><summary>Can teams use open-source libraries?</summary><div class="ans"><p><strong>Yes, as long as you credit them.</strong></p><p>See <a href="rules.html#originality">originality and attribution</a>.</p></div></details><details><summary>How should third-party code and datasets be attributed?</summary><div class="ans"><p><strong>Record each item's name, source and licence in your project credits.</strong></p><p>The exact credit format will be set with the submission format. See <a href="rules.html#originality">the rules</a>.</p></div></details><details><summary>What should participants prepare before arriving?</summary><div class="ans"><p><strong>Form a team, choose a preferred domain and read the rules.</strong></p><p>Logistics such as equipment are not set yet. See <a href="user_login.html?next=register.html">Register</a> and <a href="rules.html">Rules</a>.</p></div></details></div><div class="blk" id="schedule"><h2>Schedule and submission</h2><details><summary>When does the event begin?</summary><div class="ans"><p><strong>Exact dates are not confirmed.</strong></p><p>The draft uses a Friday-to-Sunday format with an evening start. See the <a href="schedule.html">schedule</a>.</p></div></details><details><summary>When is the final submission deadline?</summary><div class="ans"><p><strong>The proposed deadline is 11:30 AM on Sunday.</strong></p><p>See <a href="rules.html#submission">submission rules</a>. The advertised 48 hours versus about 39 building hours is flagged on the <a href="schedule.html">schedule</a>.</p></div></details><details><summary>Are mentorship sessions and checkpoints part of the schedule?</summary><div class="ans"><p><strong>Yes, the draft includes mentor sessions and checkpoints, mainly on Saturday.</strong></p><p>See the <a href="schedule.html">schedule</a>.</p></div></details><details><summary>Where can participants see the latest timetable?</summary><div class="ans"><p><strong>The <a href="schedule.html">schedule page</a> always holds the latest timetable.</strong></p><p>Changes are also logged on <a href="updates.html">Updates &amp; Archive</a>.</p></div></details></div><div class="blk" id="prizes"><h2>Prizes and judging</h2><details><summary>What award categories are proposed?</summary><div class="ans"><p><strong>Six are proposed: Overall Winner, First and Second Runner-Up, Best Innovation, Best UI/UX and Best Social Impact.</strong></p><p>The proposed pool is ₹1,20,000. See <a href="prizes-sponsors.html">Prizes &amp; Sponsors</a>. These are prototype figures, not a real commitment.</p></div></details><details><summary>How will projects be evaluated?</summary><div class="ans"><p><strong>Judging criteria have not been defined yet.</strong></p><p>See <a href="rules.html#judging">judging and evaluation</a>.</p></div></details><details><summary>Are sponsor-provided prizes confirmed?</summary><div class="ans"><p><strong>No, no sponsors or sponsor prizes are confirmed.</strong></p><p>See <a href="prizes-sponsors.html">Prizes &amp; Sponsors</a>.</p></div></details></div><div class="blk" id="practical"><h2>Practical information</h2><details><summary>Where is the venue?</summary><div class="ans"><p><strong>The venue is to be announced, and this fictional event has no real venue.</strong></p><p>Updates would appear on <a href="updates.html">Updates</a>.</p></div></details><details><summary>Is accessibility information available?</summary><div class="ans"><p><strong>Not yet.</strong></p><p>The prototype has no monitored support channel. See <a href="contact.html">Contact</a>.</p></div></details><details><summary>How can sponsors or judges make contact?</summary><div class="ans"><p><strong>Use the <a href="contact.html">contact page</a>.</strong></p><p>It is a demonstration form, so no messages are read.</p></div></details><details><summary>Where will announcements and updates appear?</summary><div class="ans"><p><strong>On the <a href="updates.html">Updates &amp; Archive page</a>.</strong></p><p>Entries there are sample entries in this prototype.</p></div></details></div>
+<nav class="related" aria-label="Related pages"><h2 style="font:700 1rem Orbitron;margin:0">Related pages</h2><ul><li><a href="rules.html">Rules &amp; eligibility</a></li><li><a href="user_login.html?next=register.html">Register</a></li><li><a href="schedule.html">Schedule</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+</div></div></section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <div class="logo" style="color:#fff"><i aria-hidden="true"></i>TECHNOVA 2026</div>
+        <p>Questions? Use the <a href="contact.html">contact page</a>.</p>
+      </div>
+      <ul>
+        <li><a href="home.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="schedule.html">Schedule</a></li>
+        <li><a href="domains.html">Domains</a></li><li><a href="rules.html">Rules</a></li><li><a href="user_login.html?next=register.html">Register</a></li>
+        <li><a href="prizes-sponsors.html">Prizes &amp; Sponsors</a></li><li><a href="faq.html">FAQ</a></li>
+        <li><a href="updates.html">Updates &amp; Archive</a></li><li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <p class="disc">Prototype disclosure: TechNova 2026 is a class project and a fictional event. Dates, venue, sponsors and prizes are not confirmed. No institutional affiliation is claimed.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var g=document.getElementById('rings'),ns='http://www.w3.org/2000/svg';
+  for(var i=1;i<=22;i++){var e=document.createElementNS(ns,'ellipse');e.setAttribute('cx',640);e.setAttribute('cy',360);e.setAttribute('rx',40+i*34);e.setAttribute('ry',25+i*21);g.appendChild(e);}
+  var b=document.getElementById('burger'),n=document.getElementById('nav');
+  b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&n.classList.contains('open')){n.classList.remove('open');b.setAttribute('aria-expanded','false');b.focus();}});
+})();
+
+(function(){var d=[].slice.call(document.querySelectorAll('details'));
+document.getElementById('ex').onclick=function(){d.forEach(function(x){x.open=true})};
+document.getElementById('co').onclick=function(){d.forEach(function(x){x.open=false})};
+function hash(){var h=location.hash&&document.querySelector(location.hash);if(h&&h.tagName==='DETAILS')h.open=true}
+hash();addEventListener('hashchange',hash);})();
+
+</script>
+<script type="module">
+import { supabase } from "./js/auth.js";
+const cta=document.getElementById("auth-cta"),menu=document.getElementById("account-menu"),avatar=document.getElementById("user-avatar"),dropdown=document.getElementById("account-dropdown"),logout=document.getElementById("logout-button"),name=document.getElementById("account-name"),email=document.getElementById("account-email");
+function signedOut(){if(menu)menu.hidden=true;if(dropdown)dropdown.hidden=true;if(avatar)avatar.setAttribute("aria-expanded","false");if(cta)cta.hidden=false;}
+function signedIn(user){if(!user)return signedOut();const full=(user.user_metadata?.full_name||user.user_metadata?.name||"").trim();if(avatar){avatar.textContent=(full||user.email||"?").charAt(0).toUpperCase();avatar.setAttribute("aria-label","Open account menu");}if(name)name.textContent=full||"Your profile";if(email)email.textContent=user.email||"";if(menu)menu.hidden=false;if(cta)cta.hidden=true;}
+if(avatar)avatar.addEventListener("click",()=>{const open=dropdown.hidden;dropdown.hidden=!open;avatar.setAttribute("aria-expanded",String(open));});
+document.addEventListener("click",event=>{if(menu&&!menu.contains(event.target)){dropdown.hidden=true;avatar?.setAttribute("aria-expanded","false");}});
+document.addEventListener("keydown",event=>{if(event.key==="Escape"&&dropdown){dropdown.hidden=true;avatar?.setAttribute("aria-expanded","false");}});
+if(logout)logout.addEventListener("click",async()=>{logout.disabled=true;logout.textContent="Logging out…";const {error}=await supabase.auth.signOut();if(error){logout.disabled=false;logout.textContent="Log out";alert("Could not log out: "+error.message);return;}location.replace("home.html");});
+const {data:{session},error}=await supabase.auth.getSession();if(error)console.error("Could not read Supabase session:",error.message);signedIn(session?.user||null);supabase.auth.onAuthStateChange((_event,next)=>signedIn(next?.user||null));
+const burger=document.getElementById("burger"),nav=document.getElementById("nav");if(burger&&nav)burger.addEventListener("click",()=>{const open=nav.classList.toggle("open");burger.setAttribute("aria-expanded",String(open));});
+</script>
+</body>
+</html>
