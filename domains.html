@@ -189,10 +189,10 @@ nav a:hover,nav a[aria-current]{background:#221d4d}
 <header>
 <div class="wrap">
 <div class="bar">
-<a aria-label="TechNova 2026 home" class="logo" href="home.html"><i aria-hidden="true"></i>TECHNOVA 2026</a>
+<a aria-label="TechNova 2026 home" class="logo" href="index.html"><i aria-hidden="true"></i>TECHNOVA 2026</a>
 <nav aria-label="Main" id="nav">
 <ul>
-<li><a href="home.html">Home</a></li>
+<li><a href="index.html">Home</a></li>
 <li><a href="about.html">About</a></li>
 <li><a href="schedule.html">Schedule</a></li>
 <li><a href="domains.html" aria-current="page">Domains</a></li>
@@ -510,7 +510,7 @@ nav a:hover,nav a[aria-current]{background:#221d4d}
 <p>Questions? Use the <a href="contact.html">contact page</a>.</p>
 </div>
 <ul>
-<li><a href="home.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="schedule.html">Schedule</a></li>
+<li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="schedule.html">Schedule</a></li>
 <li><a href="domains.html">Domains</a></li><li><a href="rules.html">Rules</a></li><li><a href="user_login.html?next=register.html">Register</a></li>
 <li><a href="prizes-sponsors.html">Prizes &amp; Sponsors</a></li><li><a href="faq.html">FAQ</a></li>
 <li><a href="updates.html">Updates &amp; Archive</a></li><li><a href="contact.html">Contact</a></li>
@@ -571,7 +571,7 @@ function signedIn(user){if(!user)return signedOut();const full=(user.user_metada
 if(avatar)avatar.addEventListener("click",()=>{const open=dropdown.hidden;dropdown.hidden=!open;avatar.setAttribute("aria-expanded",String(open));});
 document.addEventListener("click",event=>{if(menu&&!menu.contains(event.target)){dropdown.hidden=true;avatar?.setAttribute("aria-expanded","false");}});
 document.addEventListener("keydown",event=>{if(event.key==="Escape"&&dropdown){dropdown.hidden=true;avatar?.setAttribute("aria-expanded","false");}});
-if(logout)logout.addEventListener("click",async()=>{logout.disabled=true;logout.textContent="Logging out…";const {error}=await supabase.auth.signOut();if(error){logout.disabled=false;logout.textContent="Log out";alert("Could not log out: "+error.message);return;}location.replace("home.html");});
+if(logout)logout.addEventListener("click",async()=>{logout.disabled=true;logout.textContent="Logging out…";const {error}=await supabase.auth.signOut();if(error){logout.disabled=false;logout.textContent="Log out";alert("Could not log out: "+error.message);return;}location.replace("index.html");});
 const {data:{session},error}=await supabase.auth.getSession();if(error)console.error("Could not read Supabase session:",error.message);signedIn(session?.user||null);supabase.auth.onAuthStateChange((_event,next)=>signedIn(next?.user||null));
 const burger=document.getElementById("burger"),nav=document.getElementById("nav");if(burger&&nav)burger.addEventListener("click",()=>{const open=nav.classList.toggle("open");burger.setAttribute("aria-expanded",String(open));});
 </script>
