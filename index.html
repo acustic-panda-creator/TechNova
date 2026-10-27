@@ -167,10 +167,10 @@ nav a:active{transform:scale(.97)}
 <header>
   <div class="wrap">
     <div class="bar">
-      <a class="logo" href="home.html" aria-label="TechNova 2026 home"><i aria-hidden="true"></i>TECHNOVA 2026</a>
+      <a class="logo" href="index.html" aria-label="TechNova 2026 home"><i aria-hidden="true"></i>TECHNOVA 2026</a>
       <nav id="nav" aria-label="Main">
         <ul>
-          <li><a href="home.html" aria-current="page">Home</a></li>
+          <li><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="schedule.html">Schedule</a></li>
           <li><a href="domains.html">Domains</a></li>
@@ -351,7 +351,7 @@ nav a:active{transform:scale(.97)}
         <p>Questions? Use the <a href="contact.html">contact page</a>.</p>
       </div>
       <ul>
-        <li><a href="home.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="schedule.html">Schedule</a></li>
+        <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="schedule.html">Schedule</a></li>
         <li><a href="domains.html">Domains</a></li><li><a href="rules.html">Rules</a></li><li><a href="register.html">Register</a></li>
         <li><a href="prizes-sponsors.html">Prizes &amp; Sponsors</a></li><li><a href="faq.html">FAQ</a></li>
         <li><a href="updates.html">Updates &amp; Archive</a></li><li><a href="contact.html">Contact</a></li>
@@ -433,7 +433,7 @@ logoutButton.addEventListener("click", async () => {
     alert("Could not log out: " + error.message);
     return;
   }
-  location.replace("home.html");
+  location.replace("index.html");
 });
 const { data: { session }, error } = await supabase.auth.getSession();
 if (error) console.error("Could not read Supabase session:", error.message);
