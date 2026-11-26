@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://acustic-panda-creator.github.io/TechNova/sitemap.xml
